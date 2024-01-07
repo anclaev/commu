@@ -1,22 +1,38 @@
-# Install dependencies only when needed
-FROM docker.io/node:lts-alpine as deps
+ARG node_version=18.16.0
 
-# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+# Stage 1: Установка зависимостей
+FROM node:${node_version} AS deps
+
+LABEL maintainer="anclaev<iahugo@yandex.ru>"
+LABEL description="Darcr"
+
 RUN apk add --no-cache libc6-compat
-WORKDIR /usr/src/app
-COPY dist/apps/api/package*.json ./
-RUN npm install --only=production
+WORKDIR /api
 
-# Production image, copy all the files and run nest
-FROM docker.io/node:lts-alpine as runner
+COPY dist/apps/api/package*.json ./
+COPY prisma ./prisma
+
+RUN yarn install --silent && yarn prisma generate
+
+# Stage 3: Запуск приложения
+FROM node:${node_version} AS runtime
+
 RUN apk add --no-cache dumb-init
+
 ENV NODE_ENV production
-ENV PORT 3000
-WORKDIR /usr/src/app
-COPY --from=deps /usr/src/app/node_modules ./node_modules
-COPY --from=deps /usr/src/app/package.json ./package.json
+ENV PORT 3001
+
+WORKDIR /home/user/comduty/api
+
+COPY --from=deps /api/node_modules ./node_modules
+COPY --from=deps /api/package.json ./package.json
+COPY --from=deps /api/prisma ./prisma
+
 COPY dist/apps/api .
+
 RUN chown -R node:node .
 USER node
-EXPOSE 3000
+
+EXPOSE 3001
+
 CMD ["dumb-init", "node", "main.js"]

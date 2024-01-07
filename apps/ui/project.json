@@ -81,6 +81,13 @@
         "buildTarget": "ui:build",
         "staticFilePath": "dist/apps/ui/browser"
       }
+    },
+    "docker": {
+      "executor": "@nx-tools/nx-docker:build",
+      "options": {
+        "push": true,
+        "tags": ["anclaev/comduty-ui:latest"]
+      }
     }
   }
 }

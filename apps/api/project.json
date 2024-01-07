@@ -47,6 +47,13 @@
       "options": {
         "jestConfig": "apps/api/jest.config.ts"
       }
+    },
+    "docker": {
+      "executor": "@nx-tools/nx-docker:build",
+      "options": {
+        "push": true,
+        "tags": ["anclaev/comduty-api:latest"]
+      }
     }
   },
   "tags": []

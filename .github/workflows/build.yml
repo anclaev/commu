@@ -35,7 +35,8 @@ jobs:
             node_modules
             ~/.cache/Cypress
           key: npm-dependencies-${{ hashFiles('yarn.lock') }}
-      - run: yarn install --frozen-lockfile
+
+      - run: yarn install --immutable
 
       - name: Cache npm dependencies
         id: cache-dependencies-save
@@ -48,4 +49,5 @@ jobs:
 
       - uses: nrwl/nx-set-shas@v3
       - run: git branch --track main origin/main
-      - run: yarn nx affected -t build docker -- --base=remotes/origin/main
+      - run: yarn nx affected -t build
+      - run: yarn nx affected -t docker -- --base=remotes/origin/main

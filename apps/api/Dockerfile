@@ -6,7 +6,6 @@ FROM node:${node_version} AS deps
 LABEL maintainer="anclaev<iahugo@yandex.ru>"
 LABEL description="Darcr"
 
-RUN apk add --no-cache libc6-compat
 WORKDIR /api
 
 COPY dist/apps/api/package*.json ./
@@ -16,8 +15,6 @@ RUN yarn install --silent && yarn prisma generate
 
 # Stage 3: Запуск приложения
 FROM node:${node_version} AS runtime
-
-RUN apk add --no-cache dumb-init
 
 ENV NODE_ENV production
 ENV PORT 3001

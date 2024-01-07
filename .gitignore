@@ -5,6 +5,7 @@ dist
 tmp
 /out-tsc
 .env
+prisma/migrations
 
 # dependencies
 node_modules

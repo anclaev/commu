@@ -83,4 +83,19 @@ jobs:
       - uses: nrwl/nx-set-shas@v3
       - run: git branch --track main origin/main
       - run: yarn nx affected -t build
-      - run: yarn nx affected -t docker -- --base=remotes/origin/main
+  #     - run: yarn nx affected -t docker -- --base=remotes/origin/main
+
+  # deploy:
+  #   name: Deploy apps
+  #   runs-on: ubuntu-latest
+  #   needs: 'build'
+  #   steps:
+  #     - uses: appleboy/ssh-action@master
+  #       with:
+  #         key: ${{ secrets.SSH_PRIVATE_KEY }}
+  #         host: ${{ secrets.SSH_HOSTNAME }}
+  #         username: ${{ secrets.SSH_USERNAME }}
+  #         passphrase: ${{secrets.SSH_PASSPHRASE}}
+  #         script: |
+  #           docker pull anclaev/comduty-ui:latest
+  #           docker run anclaev/comduty-ui

@@ -12,6 +12,7 @@ COPY dist/apps/api/package*.json ./
 COPY prisma ./prisma
 
 RUN yarn install
+RUN yarn add -D prisma 
 RUN yarn prisma generate
 
 # Stage 3: Запуск приложения

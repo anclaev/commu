@@ -97,6 +97,9 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           passphrase: ${{secrets.SSH_PASSPHRASE}}
           script: |
-            docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+            docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin ${{ secrets.DOCKERHUB_TOKEN }}
             docker pull anclaev/comduty-ui:latest
-            docker run --name comduty-ui --network nginx-proxy-net -e VIRTUAL_HOST=${{ secrets.UI_HOST }} LETSENCRYPT_HOST=${{ secrets.UI_HOST }} anclaev/comduty-ui
+            docker run --network nginx-proxy-net \
+            -e VIRTUAL_HOST=${{ secrets.UI_HOST }} \
+            -e LETSENCRYPT_HOST=${{ secrets.UI_HOST }} \
+            --name comduty-ui anclaev/comduty-ui:latest

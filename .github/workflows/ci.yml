@@ -103,4 +103,5 @@ jobs:
             docker run --network nginx-proxy-net \
             -e VIRTUAL_HOST=${{ secrets.UI_HOST }} \
             -e LETSENCRYPT_HOST=${{ secrets.UI_HOST }} \
-            --name comduty-ui anclaev/comduty-ui:latest
+            --name comduty-ui anclaev/comduty-ui:latest 
+            echo "Container successfully reboot!"

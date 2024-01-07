@@ -1,6 +1,6 @@
 FROM nginx:1.23.1-alpine
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY apps/ui/nginx.conf /etc/nginx/conf.d/default.conf
 COPY dist/apps/ui/* /usr/share/nginx/html/
 
 

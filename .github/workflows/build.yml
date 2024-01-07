@@ -30,4 +30,4 @@ jobs:
         run: yarn install
 
       - name: Сборка проекта
-        run: yarn nx affected -t docker --base main
+        run: yarn nx affected -t docker -- --base=remotes/origin/main

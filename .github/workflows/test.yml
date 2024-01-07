@@ -35,5 +35,5 @@ jobs:
           key: ${{ steps.cache-dependencies-restore.outputs.cache-primary-key }}
 
       - uses: nrwl/nx-set-shas@v3
-      - run: git branch --track main origin/main
+      # - run: git branch --track main origin/main
       - run: yarn nx affected -t test

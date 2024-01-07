@@ -97,9 +97,11 @@ jobs:
           passphrase: ${{secrets.SSH_PASSPHRASE}}
           script: |
             docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }}
+
+            docker pull anclaev/comduty-api:latest
             docker pull anclaev/comduty-ui:latest
-            docker ps -q --filter "name=comduty-ui" | grep -q . && docker stop comduty-ui && docker rm -fv comduty-ui
-            docker run -d --network nginx-proxy-net \
-            -e VIRTUAL_HOST=${{ secrets.UI_HOST }} \
-            -e LETSENCRYPT_HOST=${{ secrets.UI_HOST }} \
-            --name comduty-ui anclaev/comduty-ui:latest
+
+            cd /home/${{ secrets.SSH_USERNAME }}/projects/comduty
+
+            docker-compose -p "comduty" down
+            docker-compose -p "comduty" up -d

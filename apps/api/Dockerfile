@@ -8,8 +8,8 @@ LABEL description="Darcr"
 
 WORKDIR /api
 
-COPY dist/apps/api/package*.json ./
-COPY prisma ./prisma
+COPY dist/apps/api/package.json ./package.json
+COPY prisma/* ./prisma/*
 
 RUN yarn install
 RUN yarn add -D prisma 
@@ -27,11 +27,11 @@ COPY --from=deps /api/node_modules ./node_modules
 COPY --from=deps /api/package.json ./package.json
 COPY --from=deps /api/prisma ./prisma
 
-COPY dist/apps/api .
+COPY dist/apps/api/* .
 
 RUN chown -R node:node .
 USER node
 
 EXPOSE 3001
 
-CMD ["dumb-init", "node", "main.js"]
+CMD ["node", "main.js"]

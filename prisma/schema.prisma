@@ -7,15 +7,37 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Rank {
+  Private
+  Corporal
+  LanceSergeant
+  Sergeant
+  StaffSergeant
+  SergeantMajor
+  WarrantOfficer
+  SeniorWarrantOfficer
+  Lieutenant
+  SeniorLieutenant
+  Captain
+  Major
+  LieutenantColonel
+  Colonel
+}
+
 model Employee {
-  id       String @id @default(uuid())
-  name     String
-  surname  String
-  rank     String
+  id           String  @id @default(uuid())
+  name         String
+  surname      String
+  salary       Int
+  personal_key String?
+
+  rank Rank
+
+  login    String @unique
   password String
 
-  dutyNumbers DutyNumber[]
-  duties      Duty[]
+  duty_members         Member[]
+  training_theme_owner TrainingTheme[]
 }
 
 model Department {
@@ -31,21 +53,93 @@ model DutyNumber {
   number String
   alias  String
 
-  department   Department? @relation(fields: [departmentId], references: [id])
-  departmentId String?
+  department    Department @relation(fields: [department_id], references: [id])
+  department_id String
 
-  employees Employee[]
-  duties    Duty[]
+  members Member[]
+}
+
+model Member {
+  id     String @id @default(uuid())
+  rating Int    @default(5)
+
+  employee    Employee @relation(fields: [employee_id], references: [id])
+  employee_id String
+
+  duty_number    DutyNumber @relation(fields: [duty_number_id], references: [id])
+  duty_number_id String
+
+  duty    Duty?   @relation(fields: [duty_id], references: [id])
+  duty_id String?
+
+  reviews       Review[]
+  reviews_owner ReviewOwner[]
+
+  trainings       Training[]
+  trainings_owner TrainingOwner[]
+}
+
+model Review {
+  id     String @id @default(uuid())
+  text   String
+  rating Int    @default(5)
+
+  member    Member @relation(fields: [member_id], references: [id])
+  member_id String
+
+  owner ReviewOwner?
+}
+
+model ReviewOwner {
+  id String @id @default(uuid())
+
+  owner    Member @relation(fields: [owner_id], references: [id])
+  owner_id String
+
+  Review   Review @relation(fields: [reviewId], references: [id])
+  reviewId String @unique
+}
+
+model TrainingTheme {
+  id   String @id @default(uuid())
+  name String
+
+  owner    Employee @relation(fields: [owner_id], references: [id])
+  owner_id String
+
+  trainings Training[]
+}
+
+model Training {
+  id     String @id @default(uuid())
+  rating Int    @default(5)
+
+  theme    TrainingTheme @relation(fields: [theme_id], references: [id])
+  theme_id String
+
+  owner             TrainingOwner @relation(fields: [training_owner_id], references: [id])
+  training_owner_id String
+
+  members Member[]
+}
+
+model TrainingOwner {
+  id String @id @default(uuid())
+
+  owner    Member @relation(fields: [owner_id], references: [id])
+  owner_id String
+
+  Training Training[]
 }
 
 model Duty {
-  id     String   @id @default(uuid())
-  date   DateTime @default(now())
-  rating Int      @default(5)
+  id String @id @default(uuid())
 
-  employee   Employee @relation(fields: [employeeId], references: [id])
-  employeeId String
+  start DateTime
+  end   DateTime
+  date  DateTime
 
-  dutyNumber   DutyNumber @relation(fields: [dutyNumberId], references: [id])
-  dutyNumberId String
+  rating Int @default(5)
+
+  members Member[]
 }

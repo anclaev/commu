@@ -11,7 +11,8 @@ WORKDIR /api
 COPY dist/apps/api/package*.json ./
 COPY prisma ./prisma
 
-RUN yarn install --silent && yarn prisma generate
+RUN yarn install
+RUN yarn prisma generate
 
 # Stage 3: Запуск приложения
 FROM node:${node_version} AS runtime

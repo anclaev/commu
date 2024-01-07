@@ -100,8 +100,7 @@ jobs:
             docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }}
             docker pull anclaev/comduty-ui:latest
             docker ps -q --filter "name=comduty-ui" | grep -q . && docker stop comduty-ui && docker rm -fv comduty-ui
-            docker run --network nginx-proxy-net \
+            docker run -d --network nginx-proxy-net \
             -e VIRTUAL_HOST=${{ secrets.UI_HOST }} \
             -e LETSENCRYPT_HOST=${{ secrets.UI_HOST }} \
-            --name comduty-ui anclaev/comduty-ui:latest 
-            echo "Container successfully reboot!"
+            --name comduty-ui anclaev/comduty-ui:latest

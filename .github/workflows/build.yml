@@ -48,4 +48,4 @@ jobs:
 
       - uses: nrwl/nx-set-shas@v3
       - run: git branch --track main origin/main
-      - run: yarn nx affected -t docker -- --base=remotes/origin/main
+      - run: yarn nx affected -t build docker -- --base=remotes/origin/main

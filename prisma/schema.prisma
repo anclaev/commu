@@ -12,6 +12,8 @@ model Employee {
   name     String
   surname  String
   rank     String
+
+  login    String @unique
   password String
 
   dutyNumbers DutyNumber[]

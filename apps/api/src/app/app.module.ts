@@ -1,6 +1,6 @@
 import { RavenInterceptor, RavenModule } from 'nest-raven';
-import { APP_INTERCEPTOR } from '@nestjs/core';
 import { HttpException, Module } from '@nestjs/common';
+import { APP_INTERCEPTOR } from '@nestjs/core';
 
 import { CommonModule } from '../common/common.module';
 import { AppController } from './app.controller';

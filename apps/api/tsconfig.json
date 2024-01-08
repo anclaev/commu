@@ -11,9 +11,6 @@
     }
   ],
   "compilerOptions": {
-    "paths": {
-      "@shared/*": ["src/shared/*"]
-    },
     "esModuleInterop": true
   }
 }

@@ -19,7 +19,7 @@ RUN yarn prisma generate
 FROM node:${node_version} AS runtime
 
 ENV NODE_ENV production
-ENV PORT 3001
+ENV API_PORT 3001
 
 WORKDIR /home/user/comduty/api
 
@@ -32,6 +32,6 @@ COPY dist/apps/api/* .
 RUN chown -R node:node .
 USER node
 
-EXPOSE 3001
+EXPOSE ${API_PORT}
 
 CMD ["node", "main.js"]

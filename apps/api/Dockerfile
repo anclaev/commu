@@ -9,11 +9,11 @@ LABEL description="Darcr"
 WORKDIR /api
 
 COPY dist/apps/api/package.json ./package.json
-COPY prisma/* ./prisma/*
+COPY prisma ./prisma
 
 RUN yarn install
 RUN yarn add -D prisma 
-RUN yarn prisma generate --schema=./prisma/schema.prisma
+RUN yarn prisma generate --schema=./api/prisma/schema.prisma
 
 # Stage 3: Запуск приложения
 FROM node:${node_version} AS runtime

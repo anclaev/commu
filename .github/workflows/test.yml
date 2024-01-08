@@ -1,5 +1,11 @@
 name: Testing
 
+env:
+  DATABASE_URL: ${{secrets.DATABASE_URL}}
+  ALLOWED_ORIGINS: ''
+  COOKIE_SECRET: ''
+  JWT_SECRET: ''
+
 on:
   push:
     branches:
@@ -73,6 +79,8 @@ jobs:
 
       - run: yarn install --immutable
 
+      - run: yarn prisma generate
+
       - name: Cache npm dependencies
         id: cache-dependencies-save
         uses: actions/cache/save@v3
@@ -82,8 +90,9 @@ jobs:
             ~/.cache/Cypress
           key: ${{ steps.cache-dependencies-restore.outputs.cache-primary-key }}
 
+      - name: Setup database
+        run: yarn prisma migrate dev --name test
+
       - uses: nrwl/nx-set-shas@v3
       # - run: git branch --track main origin/main
       - run: yarn nx affected -t e2e -c ci --parallel=1
-        env:
-          DATABASE_URL: 'postgresql://postgres:postgres@localhost:5432/comduty?schema=public'

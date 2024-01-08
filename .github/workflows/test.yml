@@ -5,6 +5,7 @@ env:
   ALLOWED_ORIGINS: ''
   COOKIE_SECRET: ''
   JWT_SECRET: ''
+  NODE_ENV: 'testing'
 
 on:
   push:

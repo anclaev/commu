@@ -36,7 +36,9 @@ model Employee {
   login    String @unique
   password String
 
-  duty_members         Member[]
+  duty_numbers DutyNumber[]
+
+  duty_members         DutyMember[]
   training_theme_owner TrainingTheme[]
 }
 
@@ -46,6 +48,7 @@ model Department {
   short_name String
 
   duty_numbers DutyNumber[]
+  combat_posts CombatPost[]
 }
 
 model DutyNumber {
@@ -56,10 +59,25 @@ model DutyNumber {
   department    Department @relation(fields: [department_id], references: [id])
   department_id String
 
-  members Member[]
+  combat_post    CombatPost @relation(fields: [combat_post_id], references: [id])
+  combat_post_id String
+
+  duty_members DutyMember[]
+
+  employees Employee[]
 }
 
-model Member {
+model CombatPost {
+  id   String @id @default(uuid())
+  name String @unique
+
+  department    Department @relation(fields: [department_id], references: [id])
+  department_id String
+
+  duty_numbers DutyNumber[]
+}
+
+model DutyMember {
   id     String @id @default(uuid())
   rating Int    @default(5)
 
@@ -84,7 +102,7 @@ model Review {
   text   String
   rating Int    @default(5)
 
-  member    Member @relation(fields: [member_id], references: [id])
+  member    DutyMember @relation(fields: [member_id], references: [id])
   member_id String
 
   owner ReviewOwner?
@@ -93,10 +111,10 @@ model Review {
 model ReviewOwner {
   id String @id @default(uuid())
 
-  owner    Member @relation(fields: [owner_id], references: [id])
+  owner    DutyMember @relation(fields: [owner_id], references: [id])
   owner_id String
 
-  Review   Review @relation(fields: [reviewId], references: [id])
+  review   Review @relation(fields: [reviewId], references: [id])
   reviewId String @unique
 }
 
@@ -117,19 +135,22 @@ model Training {
   theme    TrainingTheme @relation(fields: [theme_id], references: [id])
   theme_id String
 
-  owner             TrainingOwner @relation(fields: [training_owner_id], references: [id])
-  training_owner_id String
+  owner    TrainingOwner @relation(fields: [owner_id], references: [id])
+  owner_id String
 
-  members Member[]
+  duty    Duty   @relation(fields: [duty_id], references: [id])
+  duty_id String
+
+  members DutyMember[]
 }
 
 model TrainingOwner {
   id String @id @default(uuid())
 
-  owner    Member @relation(fields: [owner_id], references: [id])
+  owner    DutyMember @relation(fields: [owner_id], references: [id])
   owner_id String
 
-  Training Training[]
+  trainings Training[]
 }
 
 model Duty {
@@ -141,5 +162,6 @@ model Duty {
 
   rating Int @default(5)
 
-  members Member[]
+  members   DutyMember[]
+  trainings Training[]
 }

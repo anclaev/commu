@@ -1,8 +1,7 @@
-import { ProfilingIntegration } from '@sentry/profiling-node';
 import { PrismaClientExceptionFilter, PrismaService } from 'nestjs-prisma';
+import { ProfilingIntegration } from '@sentry/profiling-node';
 import { ValidationPipe } from '@nestjs/common';
 import fingerprint from 'express-fingerprint';
-import { PrismaClient } from '@prisma/client';
 import { NestFactory } from '@nestjs/core';
 import cookieParser from 'cookie-parser';
 import * as Sentry from '@sentry/node';
@@ -12,6 +11,9 @@ import { AppModule } from './app/app.module';
 import { ConfigService } from './common/services/config.service';
 import { LoggerService } from './common/services/logger.service';
 
+/**
+ * @ignore
+ */
 const bootstrap = async () => {
   const app = await NestFactory.create(AppModule);
   const httpAdapter = app.getHttpAdapter();

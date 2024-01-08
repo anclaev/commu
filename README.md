@@ -2,4 +2,7 @@
 
 Duty system
 
-![Data model](https://github.com/anclaev/comduty/tree/main/docs/data-model.png 'Data model')
+<details>
+  <summary>ER model</summary>
+    <img src="https://github.com/anclaev/comduty/blob/main/docs/data-model.png?raw=true" width="100%" alt="ER model" title="">
+</details>

@@ -126,6 +126,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Service for logging based on native logger</p>
+
+            </p>
 
             <p class="comment">
                 <h3>Extends</h3>
@@ -177,12 +184,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">apps/api/src/common/services/logger.service.ts:4</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">apps/api/src/common/services/logger.service.ts:8</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Logger constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -191,6 +200,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -205,6 +215,10 @@
                                                             Yes
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Logging context</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -240,19 +254,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="9"
-                                    class="link-to-prism">apps/api/src/common/services/logger.service.ts:9</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="21"
+                                    class="link-to-prism">apps/api/src/common/services/logger.service.ts:21</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Get context</p>
+</div>
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Current context</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -277,14 +297,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="13"
-                                    class="link-to-prism">apps/api/src/common/services/logger.service.ts:13</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="29"
+                                    class="link-to-prism">apps/api/src/common/services/logger.service.ts:29</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Set context</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -295,6 +317,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -309,6 +332,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>New context</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -332,16 +359,32 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ConsoleLogger, Injectable } from &#x27;@nestjs/common&#x27;;
 
+/**
+ * Service for logging based on native logger
+ * @constructor
+ */
 @Injectable()
 export class LoggerService extends ConsoleLogger {
+  /**
+   * Logger constructor
+   * @param {string} ctx Logging context
+   */
   constructor(ctx?: string) {
     super(ctx || &#x27;Comduty&#x27;);
   }
 
-  ctx() {
+  /**
+   * Get context
+   * @returns {string} Current context
+   */
+  ctx(): string {
     return this.context;
   }
 
+  /**
+   * Set context
+   * @param {string} ctx New context
+   */
   setCtx(ctx: string) {
     this.setContext(ctx);
   }

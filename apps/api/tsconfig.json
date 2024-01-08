@@ -12,7 +12,7 @@
   ],
   "compilerOptions": {
     "paths": {
-      "@shared/*": ["src/shared/*"]
+      "@common/*": ["src/common/*"]
     },
     "esModuleInterop": true
   }

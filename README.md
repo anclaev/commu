@@ -2,4 +2,4 @@
 
 Duty system
 
-![Data model](docs/data-model.png 'Data model')
+![Data model](https://github.com/anclaev/comduty/tree/main/docs/data-model.png 'Data model')

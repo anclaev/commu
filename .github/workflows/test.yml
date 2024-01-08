@@ -93,4 +93,4 @@ jobs:
 
       - uses: nrwl/nx-set-shas@v3
       # - run: git branch --track main origin/main
-      - run: yarn nx affected -t build,e2e -c ci --parallel=1
+      - run: yarn nx affected -t e2e --parallel=1

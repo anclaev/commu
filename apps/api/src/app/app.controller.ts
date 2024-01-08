@@ -6,7 +6,7 @@ import { Controller, Get } from '@nestjs/common';
 @Controller()
 export class AppController {
   /**
-   * GET /
+   * Test GET route
    * @returns {string} Hello response
    */
   @Get()

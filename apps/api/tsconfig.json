@@ -11,9 +11,6 @@
     }
   ],
   "compilerOptions": {
-    "paths": {
-      "@common/*": ["src/common/*"]
-    },
     "esModuleInterop": true
   }
 }

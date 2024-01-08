@@ -1,0 +1,96 @@
+name: Testing
+
+env:
+  DATABASE_URL: ${{secrets.DATABASE_URL}}
+  ALLOWED_ORIGINS: ''
+  COOKIE_SECRET: ''
+  JWT_SECRET: ''
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  test:
+    name: Code testing
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Restore cached npm dependencies
+        id: cache-dependencies-restore
+        uses: actions/cache/restore@v3
+        with:
+          path: |
+            node_modules
+            ~/.cache/Cypress
+          key: npm-dependencies-${{ hashFiles('yarn.lock') }}
+
+      - run: yarn install --immutable
+
+      - name: Cache npm dependencies
+        id: cache-dependencies-save
+        uses: actions/cache/save@v3
+        with:
+          path: |
+            node_modules
+            ~/.cache/Cypress
+          key: ${{ steps.cache-dependencies-restore.outputs.cache-primary-key }}
+
+      - uses: nrwl/nx-set-shas@v3
+      # - run: git branch --track main origin/main
+      - run: yarn nx affected -t test
+
+  e2e:
+    name: End-to-end testing
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: comduty
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Restore cached npm dependencies
+        id: cache-dependencies-restore
+        uses: actions/cache/restore@v3
+        with:
+          path: |
+            node_modules
+            ~/.cache/Cypress
+          key: npm-dependencies-${{ hashFiles('yarn.lock') }}
+
+      - run: yarn install --immutable
+
+      - name: Cache npm dependencies
+        id: cache-dependencies-save
+        uses: actions/cache/save@v3
+        with:
+          path: |
+            node_modules
+            ~/.cache/Cypress
+          key: ${{ steps.cache-dependencies-restore.outputs.cache-primary-key }}
+
+      - name: Setup database
+        run: yarn prisma migrate dev --name test
+
+      - uses: nrwl/nx-set-shas@v3
+      # - run: git branch --track main origin/main
+      - run: yarn nx affected -t e2e --parallel=1

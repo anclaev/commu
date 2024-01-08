@@ -1,5 +1,6 @@
 .dockerignore
 node_modules
+docs
 .vscode
 .yarn
 .angular

@@ -126,6 +126,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Service for config</p>
+
+            </p>
 
             <p class="comment">
                 <h3>Extends</h3>
@@ -174,10 +181,16 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">apps/api/src/common/services/config.service.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">apps/api/src/common/services/config.service.ts:12</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Config constructor</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -207,8 +220,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="12"
-                                    class="link-to-prism">apps/api/src/common/services/config.service.ts:12</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="25"
+                                    class="link-to-prism">apps/api/src/common/services/config.service.ts:25</a></div>
                         </td>
                     </tr>
 
@@ -223,6 +236,8 @@
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Method for get typed value</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -232,6 +247,7 @@
                                         <tr>
                                             <td>Name</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -243,6 +259,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>ENV name</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -252,7 +272,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Environment variable</p>
+
                             </div>
                 </td>
             </tr>
@@ -265,16 +286,29 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
-import { ENV } from &#x27;shared/interfaces&#x27;;
+
+import { ENV } from &#x27;shared/interfaces/env&#x27;;
 
 import { ConfigService as RootService } from &#x27;@nestjs/config&#x27;;
 
+/**
+ * Service for config
+ * @constructor
+ */
 @Injectable()
 export class ConfigService extends RootService {
+  /**
+   * Config constructor
+   */
   constructor() {
     super();
   }
 
+  /**
+   * Method for get typed value
+   * @param {string} value ENV name
+   * @returns {any} Environment variable
+   */
   getValue&lt;T&gt;(value: keyof ENV) {
     return this.get&lt;T&gt;(value) as T;
   }

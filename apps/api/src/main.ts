@@ -1,17 +1,20 @@
-import { ProfilingIntegration } from '@sentry/profiling-node';
 import { PrismaClientExceptionFilter, PrismaService } from 'nestjs-prisma';
+import { ProfilingIntegration } from '@sentry/profiling-node';
 import { ValidationPipe } from '@nestjs/common';
 import fingerprint from 'express-fingerprint';
-import { PrismaClient } from '@prisma/client';
 import { NestFactory } from '@nestjs/core';
 import cookieParser from 'cookie-parser';
 import * as Sentry from '@sentry/node';
 
 import { AppModule } from './app/app.module';
 
+import { RemovePayloadInterceptor } from './common/interceptors/remove-payload';
 import { ConfigService } from './common/services/config.service';
 import { LoggerService } from './common/services/logger.service';
 
+/**
+ * @ignore
+ */
 const bootstrap = async () => {
   const app = await NestFactory.create(AppModule);
   const httpAdapter = app.getHttpAdapter();
@@ -27,12 +30,15 @@ const bootstrap = async () => {
 
   const port = process.env.API_PORT || 3001;
   const host = process.env.API_HOST || 'localhost';
+  const isDev = process.env.NODE_ENV === 'development';
 
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
     })
   );
+
+  app.useGlobalInterceptors(new RemovePayloadInterceptor());
 
   app.enableCors({
     origin: allowedOrigins,
@@ -43,6 +49,7 @@ const bootstrap = async () => {
 
   Sentry.init({
     dsn,
+    enabled: !isDev,
     environment: process.env.NODE_ENV || 'development',
     serverName: host,
     integrations: [

@@ -2,11 +2,13 @@ import { RavenInterceptor, RavenModule } from 'nest-raven';
 import { HttpException, Module } from '@nestjs/common';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 
-import { CommonModule } from '../common/common.module';
 import { AppController } from './app.controller';
 
+import { EmployeeModule } from '../employee/employee.module';
+import { CommonModule } from '../common/common.module';
+
 @Module({
-  imports: [CommonModule, RavenModule],
+  imports: [CommonModule, RavenModule, EmployeeModule],
   controllers: [AppController],
   providers: [
     {

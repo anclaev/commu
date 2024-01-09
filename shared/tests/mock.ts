@@ -1,7 +1,7 @@
 import { Employee } from '@prisma/client';
 
 export const mockEmployee: Omit<Employee, 'id'> = {
-  login: 'test',
+  login: 'test2',
   name: 'test',
   password: 'test',
   role: 'User',

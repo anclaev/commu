@@ -2433,6 +2433,7 @@ __metadata:
     "@angular/platform-browser-dynamic": "npm:~17.0.0"
     "@angular/router": "npm:~17.0.0"
     "@compodoc/compodoc": "npm:^1.1.23"
+    "@golevelup/ts-jest": "npm:^0.4.0"
     "@nestjs/common": "npm:^10.0.2"
     "@nestjs/config": "npm:^3.1.1"
     "@nestjs/core": "npm:^10.0.2"
@@ -3220,6 +3221,13 @@ __metadata:
   version: 2.0.2
   resolution: "@foliojs-fork/restructure@npm:2.0.2"
   checksum: f9e6e94f7377f467a93988ee85cf326f2db3edd3029530791aced6d530fd7862efb27b00212beb8df6f7458cbec4acb6b198b36535d1acee3fb413c1d5ac55ac
+  languageName: node
+  linkType: hard
+
+"@golevelup/ts-jest@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@golevelup/ts-jest@npm:0.4.0"
+  checksum: 1540119161ddf669dacceee1a44cfe6b69bc45365b54dbe5b87d3e25e4b635fd27b47efe135cbab3b9f83546a9a6d6253012fd5f499b8c90389f063385c6d356
   languageName: node
   linkType: hard
 

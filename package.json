@@ -34,6 +34,7 @@
     "@angular/compiler-cli": "~17.0.0",
     "@angular/language-service": "~17.0.0",
     "@compodoc/compodoc": "^1.1.23",
+    "@golevelup/ts-jest": "^0.4.0",
     "@nestjs/schematics": "^10.0.1",
     "@nestjs/testing": "^10.0.2",
     "@nx-tools/nx-docker": "^3.0.8",

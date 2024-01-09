@@ -38,10 +38,10 @@ model Employee {
   login    String @unique
   password String
 
-  duty_numbers DutyNumber[]
+  positions Position[]
 
-  duty_members         DutyMember[]
-  training_theme_owner TrainingTheme[]
+  duty_members DutyMember[]
+  theme_owner  Theme[]
 }
 
 model Department {
@@ -49,34 +49,34 @@ model Department {
   name       String
   short_name String
 
-  duty_numbers DutyNumber[]
-  combat_posts CombatPost[]
+  positions Position[]
+  posts     Post[]
 }
 
-model DutyNumber {
-  id     String @id @default(uuid())
-  number String
-  alias  String
+model Position {
+  id    String @id @default(uuid())
+  name  String
+  alias String
 
   department    Department @relation(fields: [department_id], references: [id])
   department_id String
 
-  combat_post    CombatPost @relation(fields: [combat_post_id], references: [id])
-  combat_post_id String
+  post    Post   @relation(fields: [post_id], references: [id])
+  post_id String
 
   duty_members DutyMember[]
 
   employees Employee[]
 }
 
-model CombatPost {
+model Post {
   id   String @id @default(uuid())
   name String @unique
 
   department    Department @relation(fields: [department_id], references: [id])
   department_id String
 
-  duty_numbers DutyNumber[]
+  positions Position[]
 }
 
 model DutyMember {
@@ -86,8 +86,8 @@ model DutyMember {
   employee    Employee @relation(fields: [employee_id], references: [id])
   employee_id String
 
-  duty_number    DutyNumber @relation(fields: [duty_number_id], references: [id])
-  duty_number_id String
+  position    Position @relation(fields: [position_id], references: [id])
+  position_id String
 
   duty    Duty?   @relation(fields: [duty_id], references: [id])
   duty_id String?
@@ -120,7 +120,7 @@ model ReviewOwner {
   reviewId String @unique
 }
 
-model TrainingTheme {
+model Theme {
   id   String @id @default(uuid())
   name String
 
@@ -134,7 +134,7 @@ model Training {
   id     String @id @default(uuid())
   rating Int    @default(5)
 
-  theme    TrainingTheme @relation(fields: [theme_id], references: [id])
+  theme    Theme  @relation(fields: [theme_id], references: [id])
   theme_id String
 
   owner    TrainingOwner @relation(fields: [owner_id], references: [id])

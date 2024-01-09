@@ -18,7 +18,7 @@ export class LoggerService extends ConsoleLogger {
    * Get context
    * @returns {string} Current context
    */
-  ctx(): string {
+  get ctx(): string {
     return this.context;
   }
 

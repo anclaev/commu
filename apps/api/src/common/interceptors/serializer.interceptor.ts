@@ -2,10 +2,10 @@ import { CallHandler, Injectable, NestInterceptor } from '@nestjs/common';
 import { Observable, map } from 'rxjs';
 
 /**
- * Interceptor for excluding private information
+ * Interceptor for serialize response
  */
 @Injectable()
-export class RemovePayloadInterceptor implements NestInterceptor {
+export class SerializerInterceptor implements NestInterceptor {
   /**
    * Interseptor`s executor
    * @param {any} _ Context

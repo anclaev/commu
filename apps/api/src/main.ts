@@ -8,7 +8,7 @@ import * as Sentry from '@sentry/node';
 
 import { AppModule } from './app/app.module';
 
-import { RemovePayloadInterceptor } from './common/interceptors/remove-payload';
+import { SerializerInterceptor } from './common/interceptors/serializer.interceptor';
 import { ConfigService } from './common/services/config.service';
 import { LoggerService } from './common/services/logger.service';
 
@@ -38,7 +38,7 @@ const bootstrap = async () => {
     })
   );
 
-  app.useGlobalInterceptors(new RemovePayloadInterceptor());
+  app.useGlobalInterceptors(new SerializerInterceptor());
 
   app.enableCors({
     origin: allowedOrigins,

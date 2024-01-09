@@ -24,6 +24,12 @@ enum Rank {
   Colonel
 }
 
+enum Role {
+  User
+  Supervisor
+  Administrator
+}
+
 model Employee {
   id String @id @default(uuid())
 
@@ -37,11 +43,30 @@ model Employee {
 
   login    String @unique
   password String
+  role     Role   @default(value: User)
 
   positions Position[]
+  sessions  Session[]
 
   duty_members DutyMember[]
   theme_owner  Theme[]
+}
+
+model Session {
+  id String @id @default(uuid())
+
+  employee    Employee @relation(fields: [employee_id], references: [id])
+  employee_id String
+
+  created_at DateTime @default(now())
+  expiration DateTime
+
+  fingerprint String @unique
+  refresh     String
+
+  browser String?
+  device  String?
+  os      String?
 }
 
 model Department {

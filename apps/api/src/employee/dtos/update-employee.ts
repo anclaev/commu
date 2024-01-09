@@ -6,7 +6,7 @@ import {
   IsEnum,
 } from 'class-validator';
 
-import { Rank } from '@prisma/client';
+import { Rank, Role } from '@prisma/client';
 
 /**
  * Update employee DTO
@@ -49,6 +49,13 @@ export class UpdateEmployeeDto {
   @IsEnum(Rank)
   @IsOptional()
   rank?: Rank;
+
+  /**
+   * @ignore
+   */
+  @IsEnum(Role)
+  @IsOptional()
+  role?: Role;
 
   /**
    * @ignore

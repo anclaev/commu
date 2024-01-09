@@ -1,6 +1,8 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { Prisma, Employee } from '@prisma/client';
 
+import * as bcrypt from 'bcrypt';
+
 import { EmployeeRepository } from '../employee.repository';
 
 /**
@@ -37,6 +39,11 @@ export class UpdateEmployeeHandler
    * @returns {Employee | null} Updated employee
    */
   async execute({ id, dto }: UpdateEmployeeCommand): Promise<Employee | null> {
-    return await this.repository.update(id, dto);
+    return await this.repository.update(id, {
+      ...dto,
+      password: dto.password
+        ? await bcrypt.hash(dto.password as unknown as string, 10)
+        : undefined,
+    });
   }
 }

@@ -1,5 +1,4 @@
 import {
-  BadRequestException,
   ConflictException,
   INestApplication,
   NotFoundException,
@@ -12,6 +11,8 @@ import { Employee, Rank } from '@prisma/client';
 import { CqrsModule } from '@nestjs/cqrs';
 import request from 'supertest';
 
+import { mockEmployee } from 'shared/tests/mock';
+
 import { EmployeeModule } from '../../../api/src/employee/employee.module';
 
 describe('EmployeeModule (e2e)', () => {
@@ -21,6 +22,8 @@ describe('EmployeeModule (e2e)', () => {
   let createMock: jest.Mock;
   let updateMock: jest.Mock;
   let deleteMock: jest.Mock;
+
+  const localMockEmployee = { ...mockEmployee, id: 'uuid' };
 
   beforeEach(async () => {
     findUniqueMock = jest.fn();
@@ -62,19 +65,8 @@ describe('EmployeeModule (e2e)', () => {
   });
 
   describe('(GET) /employee/:id', () => {
-    let mockEmployee: Employee = {
-      id: 'uuid',
-      login: 'test',
-      name: 'test',
-      password: 'test',
-      personal_key: 'test',
-      rank: 'Private',
-      salary: 1000,
-      surname: 'test',
-    };
-
     beforeEach(() => {
-      findUniqueMock.mockResolvedValue(mockEmployee);
+      findUniqueMock.mockResolvedValue(localMockEmployee);
     });
 
     it('should return the employee', async () => {
@@ -89,29 +81,19 @@ describe('EmployeeModule (e2e)', () => {
   });
 
   describe('(POST) /employee', () => {
-    let mockEmployee: Omit<Employee, 'id'> = {
-      login: 'test',
-      name: 'test',
-      password: 'test',
-      personal_key: 'test',
-      rank: 'Private',
-      salary: 1000,
-      surname: 'test',
-    };
-
     it('employee should be created', () => {
       return request(app.getHttpServer())
         .post('/employee')
-        .send(mockEmployee)
+        .send(localMockEmployee)
         .expect(201);
     });
 
     it('should be a validation error', () => {
-      mockEmployee.rank = 'test' as keyof typeof Rank;
+      localMockEmployee.rank = 'test' as keyof typeof Rank;
 
       return request(app.getHttpServer())
         .post('/employee')
-        .send(mockEmployee)
+        .send(localMockEmployee)
         .expect(400);
     });
 
@@ -120,27 +102,17 @@ describe('EmployeeModule (e2e)', () => {
 
       return request(app.getHttpServer())
         .post('/employee')
-        .send(mockEmployee)
+        .send(localMockEmployee)
         .expect(400);
     });
   });
 
   describe('(PUT) /employee/:id', () => {
-    let mockEmployee: Omit<Employee, 'id'> = {
-      login: 'test',
-      name: 'test',
-      password: 'test',
-      personal_key: 'test',
-      rank: 'Private',
-      salary: 1000,
-      surname: 'test',
-    };
-
     it('employee should be updated', () => {
-      updateMock.mockResolvedValue(mockEmployee);
+      updateMock.mockResolvedValue(localMockEmployee);
 
       return request(app.getHttpServer())
-        .put('/employee/1')
+        .put('/employee/uuid')
         .send(mockEmployee)
         .expect(200);
     });
@@ -149,17 +121,17 @@ describe('EmployeeModule (e2e)', () => {
       updateMock.mockRejectedValue(new NotFoundException());
 
       return request(app.getHttpServer())
-        .put('/employee/1')
+        .put('/employee/uuid2')
         .send(mockEmployee)
         .expect(404);
     });
 
     it('should be a validation error', () => {
-      mockEmployee.rank = 'test' as keyof typeof Rank;
+      localMockEmployee.rank = 'test' as keyof typeof Rank;
 
       return request(app.getHttpServer())
         .put('/employee/1')
-        .send(mockEmployee)
+        .send(localMockEmployee)
         .expect(400);
     });
   });

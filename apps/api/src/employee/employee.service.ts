@@ -8,7 +8,10 @@ import { RemoveEmployeeCommand } from './commands/remove-employee';
 
 import { GetEmployeeQuery } from './queries/get-employee';
 
+import { GetEmployeeListQuery } from './queries/get-employee-list';
 import { UpdateEmployeeDto } from './dtos/update-employee';
+import { GetEmployeeListDto } from './dtos/get-employee-list';
+
 /**
  * Employee service
  */
@@ -66,5 +69,16 @@ export class EmployeeService {
       RemoveEmployeeCommand,
       Employee | null
     >(new RemoveEmployeeCommand(id));
+  }
+
+  async getOffsetPagination(dto: GetEmployeeListDto = {}): Promise<Employee[]> {
+    return await this.queryBus.execute<GetEmployeeListQuery, Employee[]>(
+      new GetEmployeeListQuery({
+        ...dto,
+        skip: dto.skip ? Number(dto.skip) : undefined,
+        take: dto.take ? Number(dto.take) : 10,
+        cursor: dto.cursor ? Number(dto.cursor) : undefined,
+      })
+    );
   }
 }

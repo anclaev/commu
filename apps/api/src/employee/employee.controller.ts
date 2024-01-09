@@ -7,12 +7,14 @@ import {
   Param,
   Post,
   Put,
+  Query,
 } from '@nestjs/common';
 
 import { Employee } from '@prisma/client';
 
 import { EmployeeService } from './employee.service';
 
+import { GetEmployeeListDto } from './dtos/get-employee-list';
 import { CreateEmployeeDto } from './dtos/create-employee';
 import { UpdateEmployeeDto } from './dtos/update-employee';
 
@@ -35,6 +37,11 @@ export class EmployeeController {
     if (!employee) throw new NotFoundException('Employee not found');
 
     return employee;
+  }
+
+  @Get()
+  async getList(@Query() query: GetEmployeeListDto): Promise<Employee[]> {
+    return await this.employeeService.getOffsetPagination(query);
   }
 
   /**

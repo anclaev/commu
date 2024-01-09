@@ -19,6 +19,7 @@ describe('EmployeeModule (e2e)', () => {
   let app: INestApplication;
 
   let findUniqueMock: jest.Mock;
+  let findManyMock: jest.Mock;
   let createMock: jest.Mock;
   let updateMock: jest.Mock;
   let deleteMock: jest.Mock;
@@ -27,6 +28,7 @@ describe('EmployeeModule (e2e)', () => {
 
   beforeEach(async () => {
     findUniqueMock = jest.fn();
+    findManyMock = jest.fn();
     createMock = jest.fn();
     updateMock = jest.fn();
     deleteMock = jest.fn();
@@ -36,6 +38,7 @@ describe('EmployeeModule (e2e)', () => {
       useValue: {
         employee: {
           findUnique: findUniqueMock,
+          findMany: findManyMock,
           create: createMock,
           update: updateMock,
           delete: deleteMock,
@@ -62,6 +65,31 @@ describe('EmployeeModule (e2e)', () => {
     );
 
     await app.init();
+  });
+
+  describe('(GET) /employee?take=0', () => {
+    beforeEach(() => {
+      findManyMock.mockResolvedValue([]);
+    });
+
+    it('should return the empty array', async () => {
+      return await request(app.getHttpServer())
+        .get('/employee?take=0')
+        .expect(200)
+        .expect([]);
+    });
+
+    it('should return the found employees', async () => {
+      findManyMock.mockResolvedValue([localMockEmployee]);
+
+      const res = await request(app.getHttpServer()).get(
+        '/employee?login=test'
+      );
+
+      expect(res.status).toEqual(200);
+      expect(Array.isArray(res.body)).toBeTruthy();
+      expect(res.body.length).toEqual(1);
+    });
   });
 
   describe('(GET) /employee/:id', () => {

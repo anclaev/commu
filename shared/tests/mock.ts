@@ -9,4 +9,5 @@ export const mockEmployee: Omit<Employee, 'id'> = {
   rank: 'Private',
   salary: 1000,
   surname: 'test',
+  created_at: new Date(),
 };

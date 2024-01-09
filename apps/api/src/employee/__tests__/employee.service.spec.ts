@@ -87,6 +87,14 @@ describe('EmployeeService', () => {
     });
   });
 
+  describe('get list employee', () => {
+    it('should be return employees array', async () => {
+      prisma.employee.findMany.mockResolvedValueOnce([]);
+
+      expect(await service.getOffsetPagination()).toStrictEqual([]);
+    });
+  });
+
   describe('remove employee', () => {
     it('should be return value', async () => {
       prisma.employee.delete.mockResolvedValueOnce({

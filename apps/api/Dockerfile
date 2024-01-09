@@ -10,6 +10,7 @@ WORKDIR /api
 
 COPY dist/apps/api/package.json ./package.json
 COPY prisma ./prisma
+COPY apps/api/entrypoint.sh ./entrypoint.sh
 
 RUN yarn install
 RUN yarn add -D prisma 
@@ -26,12 +27,15 @@ WORKDIR /home/user/comduty/api
 COPY --from=deps /api/node_modules ./node_modules
 COPY --from=deps /api/package.json ./package.json
 COPY --from=deps /api/prisma ./prisma
+COPY --from=deps /api/entrypoint.sh ./entrypoint.sh
 
 COPY dist/apps/api/* .
 
 RUN chown -R node:node .
+RUN chmod +x ./entrypoint.sh
+
 USER node
 
 EXPOSE ${API_PORT}
 
-CMD ["node", "main.js"]
+ENTRYPOINT ["./entrypoint.sh"]

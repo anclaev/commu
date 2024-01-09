@@ -24,15 +24,6 @@ export class EmployeeController {
   constructor(private employeeService: EmployeeService) {}
 
   /**
-   * Test get route
-   * @returns
-   */
-  @Get()
-  get() {
-    return 'Hi';
-  }
-
-  /**
    * Get employee by id
    * @param {string} id Employee ID
    * @returns {Employee} Found employee

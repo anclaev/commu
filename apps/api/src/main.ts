@@ -8,9 +8,9 @@ import * as Sentry from '@sentry/node';
 
 import { AppModule } from './app/app.module';
 
+import { RemovePayloadInterceptor } from './common/interceptors/remove-payload';
 import { ConfigService } from './common/services/config.service';
 import { LoggerService } from './common/services/logger.service';
-import { RemovePayloadInterceptor } from './common/interceptors/remove-payload';
 
 /**
  * @ignore

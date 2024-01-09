@@ -1,124 +1,103 @@
-import { INestApplication } from '@nestjs/common';
-import { PrismaModule, PrismaService } from 'nestjs-prisma';
+import { DeepMockProxy, mockDeep } from 'jest-mock-extended';
 import { Test, TestingModule } from '@nestjs/testing';
+import { PrismaClient } from '@prisma/client';
+import { PrismaService } from 'nestjs-prisma';
 import { CqrsModule } from '@nestjs/cqrs';
 
+import { mockEmployee } from 'shared/tests/mock';
+
+import { EmployeeCommands, EmployeeCommandHandlers } from '../commands';
+import { EmployeeQueries, EmployeeQueryHandlers } from '../queries';
+import { EmployeeRepository } from '../employee.repository';
 import { EmployeeService } from '../employee.service';
-import { EmployeeModule } from '../employee.module';
 
 describe('EmployeeService', () => {
-  let employeeService: EmployeeService;
-  let app: INestApplication;
-
-  let createMock: jest.Mock;
-  let updateMock: jest.Mock;
-  let removeMock: jest.Mock;
-  let findUniqueMock: jest.Mock;
+  let service: EmployeeService;
+  let prisma: DeepMockProxy<PrismaClient>;
 
   beforeEach(async () => {
-    createMock = jest.fn();
-    updateMock = jest.fn();
-    removeMock = jest.fn();
-    findUniqueMock = jest.fn();
-
-    const mockPrismaService = {
-      provide: PrismaService,
-      useValue: {
-        employee: {
-          findUnique: findUniqueMock,
-          create: createMock,
-          update: updateMock,
-          delete: removeMock,
-        },
-      },
-    };
-
-    const mockPrismaModule = {
-      module: PrismaModule,
-      providers: [mockPrismaService],
-      global: true,
-    };
-
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [CqrsModule.forRoot(), mockPrismaModule, EmployeeModule],
-    }).compile();
+      imports: [CqrsModule.forRoot()],
+      providers: [
+        ...EmployeeCommands,
+        ...EmployeeQueries,
+        ...EmployeeCommandHandlers,
+        ...EmployeeQueryHandlers,
+        EmployeeService,
+        PrismaService,
+        EmployeeRepository,
+      ],
+    })
+      .overrideProvider(PrismaService)
+      .useValue(mockDeep<PrismaClient>())
+      .compile();
 
-    app = moduleFixture.createNestApplication();
+    await moduleFixture.init();
 
-    await app.init();
-
-    employeeService = app.get(EmployeeService);
+    service = moduleFixture.get(EmployeeService);
+    prisma = moduleFixture.get(PrismaService);
   });
 
   it('should be defined', () => {
-    expect(employeeService).toBeDefined();
+    expect(service).toBeDefined();
   });
 
   describe('create employee', () => {
     it('should be created', async () => {
-      createMock.mockResolvedValue(true);
+      // @ts-ignore
+      prisma.employee.create.mockResolvedValueOnce({
+        ...mockEmployee,
+        id: 'test',
+      });
 
-      expect(
-        await employeeService.create({ login: 'test', password: 'test' })
-      ).toBe(true);
+      expect(await service.create(mockEmployee)).toStrictEqual({
+        ...mockEmployee,
+        id: 'test',
+      });
     });
   });
 
   describe('update employee', () => {
     it('should be updated', async () => {
-      updateMock.mockResolvedValue({ login: 'test2', password: 'test' });
+      prisma.employee.update.mockResolvedValueOnce({
+        ...mockEmployee,
+        login: 'test2',
+        id: 'test',
+      });
 
       expect(
-        await employeeService.update('test', {
-          login: 'test',
+        await service.update('test', {
+          login: 'test2',
           password: 'test',
         })
-      ).toStrictEqual({ login: 'test2', password: 'test' });
-    });
-
-    it('should be not found', async () => {
-      updateMock.mockResolvedValue(null);
-
-      expect(
-        await employeeService.update('test', {
-          login: 'test',
-          password: 'test',
-        })
-      ).toBe(null);
+      ).toStrictEqual({ ...mockEmployee, login: 'test2', id: 'test' });
     });
   });
 
   describe('find by id employee', () => {
     it('should be return value', async () => {
-      findUniqueMock.mockResolvedValue({ login: 'test2', password: 'test' });
-
-      expect(await employeeService.findOneById('id')).toStrictEqual({
-        login: 'test2',
-        password: 'test',
+      prisma.employee.findUnique.mockResolvedValueOnce({
+        ...mockEmployee,
+        id: 'test',
       });
-    });
-
-    it('should be not found', async () => {
-      findUniqueMock.mockResolvedValue(null);
-
-      expect(await employeeService.findOneById('id')).toBe(null);
+      expect(await service.findOneById('test')).toStrictEqual({
+        ...mockEmployee,
+        id: 'test',
+      });
     });
   });
 
   describe('remove employee', () => {
     it('should be return value', async () => {
-      removeMock.mockResolvedValue({ login: 'test2', password: 'test' });
-
-      expect(await employeeService.remove('id')).toStrictEqual({
-        login: 'test2',
-        password: 'test',
+      prisma.employee.delete.mockResolvedValueOnce({
+        ...mockEmployee,
+        id: 'test',
       });
-    });
 
-    it('should be not found', async () => {
-      removeMock.mockResolvedValue(null);
-
-      expect(await employeeService.remove('id')).toBe(null);
+      expect(await service.remove('test')).toStrictEqual({
+        ...mockEmployee,
+        id: 'test',
+      });
     });
   });
 });

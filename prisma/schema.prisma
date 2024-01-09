@@ -39,6 +39,8 @@ model Employee {
   salary       Int?
   personal_key String?
 
+  created_at DateTime @default(now())
+
   rank Rank @default(value: Private)
 
   login    String @unique

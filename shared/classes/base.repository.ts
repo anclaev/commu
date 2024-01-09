@@ -1,3 +1,4 @@
+import { Prisma } from '@prisma/client';
 import { IBaseRepository } from '../interfaces/base.repository';
 
 export abstract class BaseRepository<T> implements IBaseRepository<T> {
@@ -49,6 +50,20 @@ export abstract class BaseRepository<T> implements IBaseRepository<T> {
     return await this._model.update({
       where: { id },
       data,
+    });
+  }
+
+  async getOffsetPagination<F = {}>(params?: {
+    skip?: number;
+    take?: number;
+    cursor?: number;
+    where?: F;
+    orderBy?: {
+      [key: string]: 'asc' | 'desc';
+    };
+  }): Promise<T[]> {
+    return this._model.findMany({
+      ...params,
     });
   }
 }

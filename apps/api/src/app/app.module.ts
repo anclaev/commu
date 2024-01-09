@@ -6,10 +6,11 @@ import { AppController } from './app.controller';
 
 import { EmployeeModule } from '../employee/employee.module';
 import { CommonModule } from '../common/common.module';
+import { AuthModule } from '../auth/auth.module';
 import { NsiModule } from '../nsi/nsi.module';
 
 @Module({
-  imports: [CommonModule, RavenModule, NsiModule, EmployeeModule],
+  imports: [CommonModule, RavenModule, NsiModule, EmployeeModule, AuthModule],
   controllers: [AppController],
   providers: [
     {

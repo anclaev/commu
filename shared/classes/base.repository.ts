@@ -21,7 +21,7 @@ export abstract class BaseRepository<T> implements IBaseRepository<T> {
     cursor?: any;
     where?: any;
     orderBy?: any;
-  }) {
+  }): Promise<T[]> {
     const { skip, take, cursor, where, orderBy } = params;
 
     return await this._model.findMany({
@@ -33,7 +33,7 @@ export abstract class BaseRepository<T> implements IBaseRepository<T> {
     });
   }
 
-  async create(data: any): Promise<T> {
+  async create<T>(data: any): Promise<T> {
     return await this._model.create({
       data,
     });

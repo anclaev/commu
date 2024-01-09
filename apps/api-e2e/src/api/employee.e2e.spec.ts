@@ -107,7 +107,7 @@ describe('EmployeeModule (e2e)', () => {
 
   describe('(PUT) /employee/:id', () => {
     it('employee should be updated', () => {
-      updateMock.mockResolvedValue(mockEmployee);
+      updateMock.mockResolvedValue({...mockEmployee, id: "1"});
 
       return request(app.getHttpServer())
         .put('/employee/1')
@@ -119,7 +119,7 @@ describe('EmployeeModule (e2e)', () => {
       updateMock.mockRejectedValue(new NotFoundException());
 
       return request(app.getHttpServer())
-        .put('/employee/1')
+        .put('/employee/2')
         .send(mockEmployee)
         .expect(404);
     });

@@ -1,5 +1,4 @@
 import {
-  BadRequestException,
   ConflictException,
   INestApplication,
   NotFoundException,
@@ -11,6 +10,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { Employee, Rank } from '@prisma/client';
 import { CqrsModule } from '@nestjs/cqrs';
 import request from 'supertest';
+
+import { mockEmployee } from 'shared/tests/mock';
 
 import { EmployeeModule } from '../../../api/src/employee/employee.module';
 
@@ -62,17 +63,6 @@ describe('EmployeeModule (e2e)', () => {
   });
 
   describe('(GET) /employee/:id', () => {
-    let mockEmployee: Employee = {
-      id: 'uuid',
-      login: 'test',
-      name: 'test',
-      password: 'test',
-      personal_key: 'test',
-      rank: 'Private',
-      salary: 1000,
-      surname: 'test',
-    };
-
     beforeEach(() => {
       findUniqueMock.mockResolvedValue(mockEmployee);
     });
@@ -89,16 +79,6 @@ describe('EmployeeModule (e2e)', () => {
   });
 
   describe('(POST) /employee', () => {
-    let mockEmployee: Omit<Employee, 'id'> = {
-      login: 'test',
-      name: 'test',
-      password: 'test',
-      personal_key: 'test',
-      rank: 'Private',
-      salary: 1000,
-      surname: 'test',
-    };
-
     it('employee should be created', () => {
       return request(app.getHttpServer())
         .post('/employee')
@@ -126,16 +106,6 @@ describe('EmployeeModule (e2e)', () => {
   });
 
   describe('(PUT) /employee/:id', () => {
-    let mockEmployee: Omit<Employee, 'id'> = {
-      login: 'test',
-      name: 'test',
-      password: 'test',
-      personal_key: 'test',
-      rank: 'Private',
-      salary: 1000,
-      surname: 'test',
-    };
-
     it('employee should be updated', () => {
       updateMock.mockResolvedValue(mockEmployee);
 

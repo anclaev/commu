@@ -64,7 +64,7 @@ describe('EmployeeModule (e2e)', () => {
 
   describe('(GET) /employee/:id', () => {
     beforeEach(() => {
-      findUniqueMock.mockResolvedValue(mockEmployee);
+      findUniqueMock.mockResolvedValue({...mockEmployee, id: "uuid"});
     });
 
     it('should return the employee', async () => {

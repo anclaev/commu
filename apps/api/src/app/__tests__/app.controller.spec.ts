@@ -1,10 +1,8 @@
 import { INestApplication, ValidationPipe } from '@nestjs/common';
 
 import { Test, TestingModule } from '@nestjs/testing';
-import { RavenModule } from 'nest-raven';
 import request from 'supertest';
 
-import { CommonModule } from '../../common/common.module';
 import { AppController } from '../app.controller';
 
 describe('AppController', () => {
@@ -12,7 +10,6 @@ describe('AppController', () => {
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [CommonModule, RavenModule],
       controllers: [AppController],
     }).compile();
 

@@ -25,13 +25,15 @@ enum Rank {
 }
 
 model Employee {
-  id           String  @id @default(uuid())
-  name         String
-  surname      String
-  salary       Int
+  id String @id @default(uuid())
+
+  name    String?
+  surname String?
+
+  salary       Int?
   personal_key String?
 
-  rank Rank
+  rank Rank @default(value: Private)
 
   login    String @unique
   password String

@@ -98,7 +98,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Injectables</li>
-  <li class="breadcrumb-item" >ConfigService</li>
+  <li class="breadcrumb-item" >EmployeeRepository</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -122,7 +122,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>apps/api/src/common/services/config.service.ts</code>
+            <code>apps/api/src/employee/employee.repository.ts</code>
         </p>
 
 
@@ -130,7 +130,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Service for config</p>
+                <p>Employee repository</p>
 
             </p>
 
@@ -138,37 +138,10 @@
                 <h3>Extends</h3>
             </p>
             <p class="comment">
-                        <code>RootService</code>
+                        <code>BaseRepository</code>
             </p>
 
 
-            <section data-compodoc="block-index">
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#getValue" >getValue</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
 
             <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
@@ -176,141 +149,79 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(prisma: PrismaService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">apps/api/src/common/services/config.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">apps/api/src/employee/employee.repository.ts:11</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Config constructor</p>
+                            <div class="io-description"><p>Repository constructor</p>
 </div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>prisma</td>
+                                                  
+                                                        <td>
+                                                                    <code>PrismaService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Prisma service</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
                     </td>
                 </tr>
             </tbody>
         </table>
 </section>
 
-            <section data-compodoc="block-methods">
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getValue"></a>
-                    <span class="name">
-                        <span ><b>getValue</b></span>
-                        <a href="#getValue"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getValue(value)</code>
-                </td>
-            </tr>
 
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="25"
-                                    class="link-to-prism">apps/api/src/common/services/config.service.ts:25</a></div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="col-md-4">
-                            <b>Type parameters :</b>
-                            <ul class="type-parameters">
-                                    <li>T</li>
-                            </ul>
-                        </td>
-                    </tr>
-
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-description"><p>Method for get typed value</p>
-</div>
-
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                            <td>Optional</td>
-                                                <td>Description</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>value</td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                            <td>
-                                                    <p>ENV name</p>
-
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        <div class="io-description">
-                            <b>Returns : </b>    <code>T</code>
-
-                        </div>
-                            <div class="io-description">
-                                <p>Environment variable</p>
-
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { PrismaService } from &#x27;nestjs-prisma&#x27;;
+import { Injectable } from &#x27;@nestjs/common&#x27;;
+import { Employee } from &#x27;@prisma/client&#x27;;
 
-import { ENV } from &#x27;shared/interfaces/env&#x27;;
-
-import { ConfigService as RootService } from &#x27;@nestjs/config&#x27;;
+import { BaseRepository } from &#x27;shared/classes/base.repository&#x27;;
 
 /**
- * Service for config
- * @constructor
+ * Employee repository
  */
 @Injectable()
-export class ConfigService extends RootService {
+export class EmployeeRepository extends BaseRepository&lt;Employee&gt; {
   /**
-   * Config constructor
+   * Repository constructor
+   * @param {PrismaService} prisma Prisma service
    */
-  constructor() {
-    super();
-  }
-
-  /**
-   * Method for get typed value
-   * @param {string} value ENV name
-   * @returns {any} Environment variable
-   */
-  getValue&lt;T&gt;(value: keyof ENV) {
-    return this.get&lt;T&gt;(value) as T;
+  constructor(private prisma: PrismaService) {
+    super(prisma.employee);
   }
 }
 </code></pre>
@@ -356,7 +267,7 @@ export class ConfigService extends RootService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'ConfigService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'EmployeeRepository.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -86,7 +86,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content injectable">
+               <div class="content class">
                    <div class="content-data">
 
 
@@ -96,9 +96,13 @@
 
 
 
+
+
+
+
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Injectables</li>
-  <li class="breadcrumb-item" >ConfigService</li>
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >UpdateEmployeeHandler</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -122,7 +126,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>apps/api/src/common/services/config.service.ts</code>
+            <code>apps/api/src/employee/commands/update-employee.ts</code>
         </p>
 
 
@@ -130,15 +134,16 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Service for config</p>
+                <p>Update employee command handler</p>
 
             </p>
 
+
             <p class="comment">
-                <h3>Extends</h3>
+                <h3>Implements</h3>
             </p>
             <p class="comment">
-                        <code>RootService</code>
+                        <code>ICommandHandler</code>
             </p>
 
 
@@ -156,7 +161,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getValue" >getValue</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#execute" >execute</a>
                             </li>
                         </ul>
                     </td>
@@ -176,24 +182,56 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(repository: <a href="../injectables/EmployeeRepository.html" target="_self">EmployeeRepository</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">apps/api/src/common/services/config.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">apps/api/src/employee/commands/update-employee.ts:27</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Config constructor</p>
+                            <div class="io-description"><p>Constructor</p>
 </div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>repository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EmployeeRepository.html" target="_self" >EmployeeRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Repository for employees</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
                     </td>
                 </tr>
             </tbody>
         </table>
 </section>
+
 
             <section data-compodoc="block-methods">
     
@@ -204,39 +242,33 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getValue"></a>
+                    <a name="execute"></a>
                     <span class="name">
-                        <span ><b>getValue</b></span>
-                        <a href="#getValue"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Async</span>
+                        <span ><b>execute</b></span>
+                        <a href="#execute"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getValue(value)</code>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>execute(undefined: <a href="../classes/UpdateEmployeeCommand.html" target="_self">UpdateEmployeeCommand</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="25"
-                                    class="link-to-prism">apps/api/src/common/services/config.service.ts:25</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="39"
+                                    class="link-to-prism">apps/api/src/employee/commands/update-employee.ts:39</a></div>
                         </td>
                     </tr>
 
-                    <tr>
-                        <td class="col-md-4">
-                            <b>Type parameters :</b>
-                            <ul class="type-parameters">
-                                    <li>T</li>
-                            </ul>
-                        </td>
-                    </tr>
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Method for get typed value</p>
+                        <div class="io-description"><p>Command executor</p>
 </div>
 
                             <div class="io-description">
@@ -246,33 +278,31 @@
                                     <thead>
                                         <tr>
                                             <td>Name</td>
+                                                <td>Type</td>
                                             <td>Optional</td>
-                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>value</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateEmployeeCommand.html" target="_self" >UpdateEmployeeCommand</a></code>
+                                            </td>
 
                                             <td>
                                                     No
                                             </td>
 
 
-                                            <td>
-                                                    <p>ENV name</p>
-
-                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>T</code>
+                            <b>Returns : </b>    <code>Promise&lt;Employee | null&gt;</code>
 
                         </div>
                             <div class="io-description">
-                                <p>Environment variable</p>
+                                <p>Updated employee</p>
 
                             </div>
                 </td>
@@ -281,46 +311,59 @@
     </table>
 </section>
 
+
+
+
+
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommandHandler, ICommandHandler } from &#x27;@nestjs/cqrs&#x27;;
+import { Prisma, Employee } from &#x27;@prisma/client&#x27;;
 
-import { ENV } from &#x27;shared/interfaces/env&#x27;;
-
-import { ConfigService as RootService } from &#x27;@nestjs/config&#x27;;
+import { EmployeeRepository } from &#x27;../employee.repository&#x27;;
 
 /**
- * Service for config
- * @constructor
+ * Update employee command
  */
-@Injectable()
-export class ConfigService extends RootService {
+export class UpdateEmployeeCommand {
   /**
-   * Config constructor
+   * Constructor
+   * @param {string} id Employee ID
+   * @param {Prisma.EmployeeUpdateInput} dto Employee fields for update
    */
-  constructor() {
-    super();
-  }
+  constructor(
+    public readonly id: string,
+    public readonly dto: Prisma.EmployeeUpdateInput
+  ) {}
+}
+
+/**
+ * Update employee command handler
+ */
+@CommandHandler(UpdateEmployeeCommand)
+export class UpdateEmployeeHandler
+  implements ICommandHandler&lt;UpdateEmployeeCommand&gt;
+{
+  /**
+   * Constructor
+   * @param {EmployeeRepository} repository Repository for employees
+   */
+  constructor(private repository: EmployeeRepository) {}
 
   /**
-   * Method for get typed value
-   * @param {string} value ENV name
-   * @returns {any} Environment variable
+   * Command executor
+   * @param {UpdateEmployeeCommand} dto Execution command
+   * @returns {Employee | null} Updated employee
    */
-  getValue&lt;T&gt;(value: keyof ENV) {
-    return this.get&lt;T&gt;(value) as T;
+  async execute({ id, dto }: UpdateEmployeeCommand): Promise&lt;Employee | null&gt; {
+    return await this.repository.update(id, dto);
   }
 }
 </code></pre>
     </div>
-
 </div>
-
-
-
-
 
 
 
@@ -355,8 +398,8 @@ export class ConfigService extends RootService {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'ConfigService.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'UpdateEmployeeHandler.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

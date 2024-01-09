@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { ENV } from 'shared/interfaces';
+
+import { ENV } from 'shared/interfaces/env';
 
 import { ConfigService as RootService } from '@nestjs/config';
 

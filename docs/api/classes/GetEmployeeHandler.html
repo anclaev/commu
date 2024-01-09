@@ -86,7 +86,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content injectable">
+               <div class="content class">
                    <div class="content-data">
 
 
@@ -96,9 +96,13 @@
 
 
 
+
+
+
+
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Injectables</li>
-  <li class="breadcrumb-item" >ConfigService</li>
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >GetEmployeeHandler</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -122,7 +126,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>apps/api/src/common/services/config.service.ts</code>
+            <code>apps/api/src/employee/queries/get-employee.ts</code>
         </p>
 
 
@@ -130,15 +134,16 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Service for config</p>
+                <p>Get employee query handler</p>
 
             </p>
 
+
             <p class="comment">
-                <h3>Extends</h3>
+                <h3>Implements</h3>
             </p>
             <p class="comment">
-                        <code>RootService</code>
+                        <code>IQueryHandler</code>
             </p>
 
 
@@ -156,7 +161,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getValue" >getValue</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#execute" >execute</a>
                             </li>
                         </ul>
                     </td>
@@ -176,24 +182,56 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(repository: <a href="../injectables/EmployeeRepository.html" target="_self">EmployeeRepository</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">apps/api/src/common/services/config.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">apps/api/src/employee/queries/get-employee.ts:21</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Config constructor</p>
+                            <div class="io-description"><p>Constructor</p>
 </div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>repository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EmployeeRepository.html" target="_self" >EmployeeRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Repository for employees</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
                     </td>
                 </tr>
             </tbody>
         </table>
 </section>
+
 
             <section data-compodoc="block-methods">
     
@@ -204,39 +242,33 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getValue"></a>
+                    <a name="execute"></a>
                     <span class="name">
-                        <span ><b>getValue</b></span>
-                        <a href="#getValue"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Async</span>
+                        <span ><b>execute</b></span>
+                        <a href="#execute"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getValue(value)</code>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>execute(undefined: <a href="../classes/GetEmployeeQuery.html" target="_self">GetEmployeeQuery</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="25"
-                                    class="link-to-prism">apps/api/src/common/services/config.service.ts:25</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="33"
+                                    class="link-to-prism">apps/api/src/employee/queries/get-employee.ts:33</a></div>
                         </td>
                     </tr>
 
-                    <tr>
-                        <td class="col-md-4">
-                            <b>Type parameters :</b>
-                            <ul class="type-parameters">
-                                    <li>T</li>
-                            </ul>
-                        </td>
-                    </tr>
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Method for get typed value</p>
+                        <div class="io-description"><p>Query executor</p>
 </div>
 
                             <div class="io-description">
@@ -246,33 +278,31 @@
                                     <thead>
                                         <tr>
                                             <td>Name</td>
+                                                <td>Type</td>
                                             <td>Optional</td>
-                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>value</td>
+                                            <td>
+                                                            <code><a href="../classes/GetEmployeeQuery.html" target="_self" >GetEmployeeQuery</a></code>
+                                            </td>
 
                                             <td>
                                                     No
                                             </td>
 
 
-                                            <td>
-                                                    <p>ENV name</p>
-
-                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>T</code>
+                            <b>Returns : </b>    <code>Promise&lt;Employee | null&gt;</code>
 
                         </div>
                             <div class="io-description">
-                                <p>Environment variable</p>
+                                <p>Found employee</p>
 
                             </div>
                 </td>
@@ -281,46 +311,53 @@
     </table>
 </section>
 
+
+
+
+
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IQueryHandler, QueryHandler } from &#x27;@nestjs/cqrs&#x27;;
+import { Prisma, Employee } from &#x27;@prisma/client&#x27;;
 
-import { ENV } from &#x27;shared/interfaces/env&#x27;;
-
-import { ConfigService as RootService } from &#x27;@nestjs/config&#x27;;
+import { EmployeeRepository } from &#x27;../employee.repository&#x27;;
 
 /**
- * Service for config
- * @constructor
+ * Get employee query
  */
-@Injectable()
-export class ConfigService extends RootService {
+export class GetEmployeeQuery {
   /**
-   * Config constructor
+   * Constructor
+   * @param {Prisma.EmployeeWhereUniqueInput} dto Employee unique fields
    */
-  constructor() {
-    super();
-  }
+  constructor(public readonly dto: Prisma.EmployeeWhereUniqueInput) {}
+}
+
+/**
+ * Get employee query handler
+ */
+@QueryHandler(GetEmployeeQuery)
+export class GetEmployeeHandler implements IQueryHandler&lt;GetEmployeeQuery&gt; {
+  /**
+   * Constructor
+   * @param {EmployeeRepository} repository Repository for employees
+   */
+  constructor(private repository: EmployeeRepository) {}
 
   /**
-   * Method for get typed value
-   * @param {string} value ENV name
-   * @returns {any} Environment variable
+   * Query executor
+   * @param {GetEmployeeQuery} dto Execution query
+   * @returns {Employee | null} Found employee
    */
-  getValue&lt;T&gt;(value: keyof ENV) {
-    return this.get&lt;T&gt;(value) as T;
+  async execute({ dto }: GetEmployeeQuery): Promise&lt;Employee | null&gt; {
+    return this.repository.findOne(dto);
   }
 }
 </code></pre>
     </div>
-
 </div>
-
-
-
-
 
 
 
@@ -355,8 +392,8 @@ export class ConfigService extends RootService {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'ConfigService.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'GetEmployeeHandler.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

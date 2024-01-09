@@ -10,6 +10,7 @@ import { AppModule } from './app/app.module';
 
 import { ConfigService } from './common/services/config.service';
 import { LoggerService } from './common/services/logger.service';
+import { RemovePayloadInterceptor } from './common/interceptors/remove-payload';
 
 /**
  * @ignore
@@ -29,12 +30,15 @@ const bootstrap = async () => {
 
   const port = process.env.API_PORT || 3001;
   const host = process.env.API_HOST || 'localhost';
+  const isDev = process.env.NODE_ENV === 'development';
 
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
     })
   );
+
+  app.useGlobalInterceptors(new RemovePayloadInterceptor());
 
   app.enableCors({
     origin: allowedOrigins,
@@ -45,6 +49,7 @@ const bootstrap = async () => {
 
   Sentry.init({
     dsn,
+    enabled: !isDev,
     environment: process.env.NODE_ENV || 'development',
     serverName: host,
     integrations: [

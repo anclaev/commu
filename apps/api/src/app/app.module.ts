@@ -6,9 +6,10 @@ import { AppController } from './app.controller';
 
 import { EmployeeModule } from '../employee/employee.module';
 import { CommonModule } from '../common/common.module';
+import { NsiModule } from '../nsi/nsi.module';
 
 @Module({
-  imports: [CommonModule, RavenModule, EmployeeModule],
+  imports: [CommonModule, RavenModule, NsiModule, EmployeeModule],
   controllers: [AppController],
   providers: [
     {

@@ -43,9 +43,9 @@ jobs:
           key: ${{ steps.cache-dependencies-restore.outputs.cache-primary-key }}
 
       - uses: nrwl/nx-set-shas@v3
-      - run: yarn nx affected -t test --coverage --coverageReporters=json,json-summary
+      - run: yarn nx affected -t test --skip-nx-cache --coverage --coverageReporters=json,json-summary
 
-      - name: Archive сode сoverage Results
+      - name: Archive сode сoverage results
         uses: actions/upload-artifact@v3
         with:
           name: code-coverage-report
@@ -58,7 +58,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           no-coverage-ran: false
           coverage-folder: ./coverage
-          coverage-base-folder: ./coverage-base
           gist-token: ${{ secrets.GIST_SECRET }}
           gist-id: a9b3e0ce15d9680f1ec5aff8cf418aa8
           color: green

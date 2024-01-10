@@ -6,6 +6,7 @@ env:
   COOKIE_SECRET: ''
   JWT_SECRET: ''
   NODE_ENV: 'test'
+  BRANCH: 'develop'
 
 on:
   push:
@@ -42,8 +43,26 @@ jobs:
           key: ${{ steps.cache-dependencies-restore.outputs.cache-primary-key }}
 
       - uses: nrwl/nx-set-shas@v3
-      # - run: git branch --track main origin/main
-      - run: yarn nx affected -t test
+      - run: yarn nx affected -t test --coverage --coverageReporters=json,json-summary
+
+      - name: Archive сode сoverage Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage-report
+          path: ./coverage/**/coverage-summary.json
+          if-no-files-found: error
+
+      - name: Code сoverage
+        uses: dkhunt27/nx-code-coverage@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          no-coverage-ran: false
+          coverage-folder: ./coverage
+          coverage-base-folder: ./coverage-base
+          gist-token: ${{ secrets.GIST_SECRET }}
+          gist-id: a9b3e0ce15d9680f1ec5aff8cf418aa8
+          color: green
+          named-logo: jest
 
   e2e:
     name: End-to-end testing

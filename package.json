@@ -18,7 +18,7 @@
     "test:ui": "nx test ui",
     "test:all": "nx run-many -t test",
     "test": "nx affected -t test",
-    "e2e:api": "NX_SKIP_NX_CACHE=true  nx run api-e2e:e2e",
+    "e2e:api": "NX_SKIP_NX_CACHE=true nx run api-e2e:e2e",
     "doc:api": "yarn compodoc apps/api -d ./docs/api -p apps/api/tsconfig.json -n \"Comduty API\"",
     "graph": "nx graph",
     "commit": "git commit -S"

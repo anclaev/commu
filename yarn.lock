@@ -2443,6 +2443,7 @@ __metadata:
     "@nestjs/platform-express": "npm:^10.0.2"
     "@nestjs/schematics": "npm:^10.0.1"
     "@nestjs/testing": "npm:^10.0.2"
+    "@ngrx/store": "npm:^17.0.1"
     "@nx-tools/nx-docker": "npm:^3.0.8"
     "@nx/angular": "npm:^17.2.8"
     "@nx/cypress": "npm:17.2.8"
@@ -3922,6 +3923,18 @@ __metadata:
     "@nestjs/platform-express":
       optional: true
   checksum: e99420dee55bd0184092d9076b6acd205632b012620b60448652ba6e156e3dc7c6255f2a45edadcd632f9682abf777e43d8b03c83bb8c9e8be6e7e0af728b0d5
+  languageName: node
+  linkType: hard
+
+"@ngrx/store@npm:^17.0.1":
+  version: 17.0.1
+  resolution: "@ngrx/store@npm:17.0.1"
+  dependencies:
+    tslib: "npm:^2.0.0"
+  peerDependencies:
+    "@angular/core": ^17.0.0
+    rxjs: ^6.5.3 || ^7.5.0
+  checksum: 59ff28dc25224a2b78eb59238e34a5da07e7c9572bedc62ab5166820113cf1d30f5ec7cdeda04e952c7247b7ccc5f9e04f0f5b6af2f5a49f1c2aef3e61677955
   languageName: node
   linkType: hard
 
@@ -17783,7 +17796,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:2.6.2, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.4.0, tslib@npm:^2.5.0":
+"tslib@npm:2.6.2, tslib@npm:^2.0.0, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.4.0, tslib@npm:^2.5.0":
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: e03a8a4271152c8b26604ed45535954c0a45296e32445b4b87f8a5abdb2421f40b59b4ca437c4346af0f28179780d604094eb64546bee2019d903d01c6c19bdb

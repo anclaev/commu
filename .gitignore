@@ -7,6 +7,9 @@ tmp
 .env
 
 # dependencies
+.angular
+.yarn
+.nx
 node_modules
 yarn-error.log
 

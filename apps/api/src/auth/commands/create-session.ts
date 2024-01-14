@@ -1,6 +1,5 @@
 import { CommandHandler, ICommandHandler, QueryBus } from '@nestjs/cqrs';
 import { Session } from '@prisma/client';
-import { JwtService } from '@nestjs/jwt';
 
 import { ConfigService } from '../../common/services/config.service';
 
@@ -20,7 +19,6 @@ export class CreateSessionHandler
 
   constructor(
     private repository: SessionRepository,
-    private jwt: JwtService,
     private config: ConfigService,
     private queryBus: QueryBus
   ) {
@@ -34,27 +32,31 @@ export class CreateSessionHandler
     >(
       new GetSessionsByEmployeeQuery({
         where: {
-          id: dto.payload.id,
+          employee_id: dto.payload.id,
         },
       })
     );
 
     if (alreadySessions.length >= this.maxSessions) {
-      // login delete existing session
+      const oldSessionId = alreadySessions
+        .sort((a, b) => {
+          return (
+            new Date(b.created_at).valueOf() - new Date(a.created_at).valueOf()
+          );
+        })
+        .reverse()[0].id;
+
+      await this.repository.remove(oldSessionId);
     }
 
-    const expiresIn = `${this.config.getValue('SESSION_EXPIRATION')}s`;
-
-    const refresh = this.jwt.sign(dto.payload, {
-      secret: this.config.getValue('JWT_REFRESH_SECRET'),
-      expiresIn,
-    });
-
-    return await this.repository.create<Session>({
-      employee: dto.payload.id,
-      expiration: new Date() + expiresIn,
+    const session = await this.repository.create<Session>({
+      id: dto.payload.session,
+      employee_id: String(dto.payload.id),
+      expiration: dto.expiration,
       fingerprint: dto.fingerprint.hash,
-      refresh,
+      refresh: dto.refresh,
     });
+
+    return session;
   }
 }

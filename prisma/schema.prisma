@@ -63,7 +63,7 @@ model Session {
   created_at DateTime @default(now())
   expiration DateTime
 
-  fingerprint String @unique
+  fingerprint String
   refresh     String
 
   browser String?

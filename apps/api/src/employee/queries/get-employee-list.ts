@@ -18,7 +18,7 @@ export class GetEmployeeListHandler
     const { skip, take, cursor, ...query } = dto;
     const where = {};
 
-    for (let key in query) {
+    for (const key in query) {
       where[key] = { contains: query[key] };
     }
 

@@ -9,4 +9,6 @@ export interface ENV {
   SENTRY_API_DSN: string;
   MAX_SESSIONS: number;
   SESSION_EXPIRATION: number;
+  JWT_EXPIRATION: number;
+  JWT_REFRESH_EXPIRATION: number;
 }

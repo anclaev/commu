@@ -12,6 +12,8 @@ import {
 
 import { Employee } from '@prisma/client';
 
+import { Auth } from '../auth/decorators';
+
 import { EmployeeService } from './employee.service';
 
 import { GetEmployeeListDto } from './dtos/get-employee-list';
@@ -30,6 +32,7 @@ export class EmployeeController {
    * @param {string} id Employee ID
    * @returns {Employee} Found employee
    */
+  @Auth(['User'])
   @Get(':id')
   async getById(@Param('id') id: string): Promise<Employee> {
     const employee = await this.employeeService.findOneById(id);
@@ -39,6 +42,7 @@ export class EmployeeController {
     return employee;
   }
 
+  @Auth(['User'])
   @Get()
   async getList(@Query() query: GetEmployeeListDto): Promise<Employee[]> {
     return await this.employeeService.getOffsetPagination(query);
@@ -49,6 +53,7 @@ export class EmployeeController {
    * @param {CreateEmployeeDto} dto Employee data
    * @returns {Employee} Created employee
    */
+  @Auth(['Administrator'])
   @Post()
   async create(@Body() dto: CreateEmployeeDto): Promise<Employee> {
     return await this.employeeService.create(dto);
@@ -60,6 +65,7 @@ export class EmployeeController {
    * @param {UpdateEmployeeDto} dto Updated employee fields
    * @returns {Employee} Updated employee
    */
+  @Auth(['Administrator'])
   @Put(':id')
   async update(
     @Param('id') id: string,
@@ -77,8 +83,10 @@ export class EmployeeController {
    * @param {string} id Employee ID
    * @returns {Employee} Deleted employee
    */
+  @Auth(['Administrator'])
   @Delete(':id')
   async remove(@Param('id') id: string): Promise<Employee> {
+    console.log('hi!');
     return await this.employeeService.remove(id);
   }
 }

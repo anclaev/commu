@@ -14,6 +14,6 @@ export class RemoveSessionHandler
   constructor(private repository: SessionRepository) {}
 
   async execute({ id }: RemoveSessionCommand): Promise<Session> {
-    return await this.repository.remove(id);
+    return await this.repository.removeById(id);
   }
 }

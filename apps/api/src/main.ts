@@ -19,7 +19,6 @@ const bootstrap = async () => {
   const app = await NestFactory.create(AppModule);
   const httpAdapter = app.getHttpAdapter();
   const instance = httpAdapter.getInstance();
-
   const config = app.get(ConfigService);
   const logger = app.get(LoggerService);
   const prisma = app.get(PrismaService);

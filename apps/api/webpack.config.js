@@ -6,8 +6,14 @@ module.exports = composePlugins(
     target: 'node',
   }),
   (config) => {
-    // Update the webpack config as needed here.
-    // e.g. `config.plugins.push(new MyPlugin())`
+    const definePlugin = config.plugins.find((x) => x.constructor.name === 'DefinePlugin');
+
+    if (definePlugin) {
+      definePlugin.definitions['process.env'] = {
+        ...(definePlugin.definitions['process.env'] || {}),
+        NX_PKG_VERSION: JSON.stringify(process.env.npm_package_version),
+      };
+    }
     return config;
   }
 );

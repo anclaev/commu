@@ -2,6 +2,10 @@
 @import './_fonts.css';
 @import './_scroll.css';
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   height: 100vh;
 }
@@ -17,6 +21,6 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-/* p {
+p {
   margin: 0;
-} */
+}

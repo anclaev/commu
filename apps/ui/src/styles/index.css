@@ -1,0 +1,26 @@
+@import './_vars.css';
+@import './_fonts.css';
+@import './_scroll.css';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  background: linear-gradient(
+    108deg,
+    var(--color-primary-light) 0%,
+    var(--color-primary-dark) 100%
+  );
+  color: var(--color-content);
+  font-family: 'Lato', sans-serif;
+}
+
+p {
+  margin: 0;
+}

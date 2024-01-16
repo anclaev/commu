@@ -4,3 +4,14 @@
   width="275px"
   height="52px"
 />
+<comduty-form [formGroup]="signInForm" [title]="'Войти'" (handler)="signIn()">
+  <label for="login">Логин</label>
+  <input type="text" id="login" formControlName="login" placeholder="Логин" />
+  <label for="password">Пароль</label>
+  <input
+    type="password"
+    id="password"
+    formControlName="password"
+    placeholder="Пароль"
+  />
+</comduty-form>

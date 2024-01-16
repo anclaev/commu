@@ -5,3 +5,7 @@
   max-width: 275px;
   margin-bottom: 20%;
 }
+
+:host label {
+  display: none;
+}

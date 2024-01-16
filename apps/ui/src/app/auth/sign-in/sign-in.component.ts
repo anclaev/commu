@@ -17,6 +17,8 @@ export class SignInComponent {
   }
 
   signIn() {
-    console.log('hi!');
+    console.log(this.signInForm.controls['login'].value);
+
+    console.log(this.signInForm.controls['password'].value);
   }
 }

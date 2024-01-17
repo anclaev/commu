@@ -26,6 +26,6 @@ export class AppComponent {
   public background: string;
 
   constructor() {
-    this.background = '/assets/bg/' + randomNum(1, 3);
+    this.background = '/assets/bg/' + randomNum(1, 2);
   }
 }

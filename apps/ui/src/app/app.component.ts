@@ -7,7 +7,6 @@ import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 
 import { BgComponent } from './shared/bg/bg.component';
-import { randomNum } from './shared/utils';
 
 @Component({
   standalone: true,
@@ -26,6 +25,6 @@ export class AppComponent {
   public background: string;
 
   constructor() {
-    this.background = '/assets/bg/' + randomNum(1, 2) + '-v1';
+    this.background = '/assets/bg/' + 2 + '-v1';
   }
 }

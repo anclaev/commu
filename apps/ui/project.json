@@ -21,7 +21,7 @@
           "apps/ui/src/site.webmanifest",
           "apps/ui/src/browserconfig.xml"
         ],
-        "styles": ["apps/ui/src/styles/index.css"],
+        "styles": ["apps/ui/src/styles/theme.scss"],
         "scripts": []
       },
       "configurations": {

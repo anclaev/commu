@@ -437,6 +437,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@angular/cdk@npm:~17.0.5":
+  version: 17.0.5
+  resolution: "@angular/cdk@npm:17.0.5"
+  dependencies:
+    parse5: "npm:^7.1.2"
+    tslib: "npm:^2.3.0"
+  peerDependencies:
+    "@angular/common": ^17.0.0 || ^18.0.0
+    "@angular/core": ^17.0.0 || ^18.0.0
+    rxjs: ^6.5.3 || ^7.4.0
+  dependenciesMeta:
+    parse5:
+      optional: true
+  checksum: 109ce0dea2a48b3098aa16b1e1358898080dd9b1745f516e64a6ec1b76693b8937c92b086879c972ccea9ceb6647e72decbff2febbd59c75103c00b88e93dab8
+  languageName: node
+  linkType: hard
+
 "@angular/cli@npm:~17.0.0":
   version: 17.0.9
   resolution: "@angular/cli@npm:17.0.9"
@@ -544,6 +561,70 @@ __metadata:
   version: 17.0.8
   resolution: "@angular/language-service@npm:17.0.8"
   checksum: cee11f5aa4040aa37282eeaf74132e5bbc8301be1a89f02119deede3f5aa51500327cc020ada8de8e08427a068e21b564313867c288debc658b51e3e9d661e9a
+  languageName: node
+  linkType: hard
+
+"@angular/material@npm:^17.0.5":
+  version: 17.0.5
+  resolution: "@angular/material@npm:17.0.5"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/auto-init": "npm:15.0.0-canary.a246a4439.0"
+    "@material/banner": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/button": "npm:15.0.0-canary.a246a4439.0"
+    "@material/card": "npm:15.0.0-canary.a246a4439.0"
+    "@material/checkbox": "npm:15.0.0-canary.a246a4439.0"
+    "@material/chips": "npm:15.0.0-canary.a246a4439.0"
+    "@material/circular-progress": "npm:15.0.0-canary.a246a4439.0"
+    "@material/data-table": "npm:15.0.0-canary.a246a4439.0"
+    "@material/density": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dialog": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/drawer": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/fab": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/floating-label": "npm:15.0.0-canary.a246a4439.0"
+    "@material/form-field": "npm:15.0.0-canary.a246a4439.0"
+    "@material/icon-button": "npm:15.0.0-canary.a246a4439.0"
+    "@material/image-list": "npm:15.0.0-canary.a246a4439.0"
+    "@material/layout-grid": "npm:15.0.0-canary.a246a4439.0"
+    "@material/line-ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/linear-progress": "npm:15.0.0-canary.a246a4439.0"
+    "@material/list": "npm:15.0.0-canary.a246a4439.0"
+    "@material/menu": "npm:15.0.0-canary.a246a4439.0"
+    "@material/menu-surface": "npm:15.0.0-canary.a246a4439.0"
+    "@material/notched-outline": "npm:15.0.0-canary.a246a4439.0"
+    "@material/radio": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/segmented-button": "npm:15.0.0-canary.a246a4439.0"
+    "@material/select": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/slider": "npm:15.0.0-canary.a246a4439.0"
+    "@material/snackbar": "npm:15.0.0-canary.a246a4439.0"
+    "@material/switch": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tab": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tab-bar": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tab-indicator": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tab-scroller": "npm:15.0.0-canary.a246a4439.0"
+    "@material/textfield": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tooltip": "npm:15.0.0-canary.a246a4439.0"
+    "@material/top-app-bar": "npm:15.0.0-canary.a246a4439.0"
+    "@material/touch-target": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.3.0"
+  peerDependencies:
+    "@angular/animations": ^17.0.0 || ^18.0.0
+    "@angular/cdk": 17.0.5
+    "@angular/common": ^17.0.0 || ^18.0.0
+    "@angular/core": ^17.0.0 || ^18.0.0
+    "@angular/forms": ^17.0.0 || ^18.0.0
+    "@angular/platform-browser": ^17.0.0 || ^18.0.0
+    rxjs: ^6.5.3 || ^7.4.0
+  checksum: 952e973857983b63da057811fb0c3ecfff7e155b4d1261cdc0f222781aa9942282561123ad0e6f52a9228ec587a6638349773023df1492f2e67b68477cbbc28a
   languageName: node
   linkType: hard
 
@@ -2422,6 +2503,7 @@ __metadata:
     "@angular-eslint/eslint-plugin-template": "npm:~17.0.0"
     "@angular-eslint/template-parser": "npm:~17.0.0"
     "@angular/animations": "npm:~17.0.0"
+    "@angular/cdk": "npm:~17.0.5"
     "@angular/cli": "npm:~17.0.0"
     "@angular/common": "npm:~17.0.0"
     "@angular/compiler": "npm:~17.0.0"
@@ -2429,6 +2511,7 @@ __metadata:
     "@angular/core": "npm:~17.0.0"
     "@angular/forms": "npm:~17.0.0"
     "@angular/language-service": "npm:~17.0.0"
+    "@angular/material": "npm:^17.0.5"
     "@angular/platform-browser": "npm:~17.0.0"
     "@angular/platform-browser-dynamic": "npm:~17.0.0"
     "@angular/router": "npm:~17.0.0"
@@ -3702,6 +3785,808 @@ __metadata:
   bin:
     node-pre-gyp: bin/node-pre-gyp
   checksum: 2b24b93c31beca1c91336fa3b3769fda98e202fb7f9771f0f4062588d36dcc30fcf8118c36aa747fa7f7610d8cf601872bdaaf62ce7822bb08b545d1bbe086cc
+  languageName: node
+  linkType: hard
+
+"@material/animation@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/animation@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    tslib: "npm:^2.1.0"
+  checksum: 069d987f1a3f3b9f7552ccbf7aa55fa3cdf46a7def4ed57e0a070e1a7bb01a8b08b2861fbfcf2386075e5fa159b1cc24d9e8069b544af6a54ca155d624aa5dd8
+  languageName: node
+  linkType: hard
+
+"@material/auto-init@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/auto-init@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 3134c93291b8df86dce1767ffa3d1fd815bd701181a24d98426880a2a22213d84e333136240c52c26203218af750afc916ee288facb0a69aa7d5e14a5af97013
+  languageName: node
+  linkType: hard
+
+"@material/banner@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/banner@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/button": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 2d8eca31cde36d212a0071bc850950b29b60773036d99594b195d816260669a1cd188232eea9c2e5d712cbc9cc44a1202cf4db71bfa5fedf3c131c551ae4595c
+  languageName: node
+  linkType: hard
+
+"@material/base@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/base@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    tslib: "npm:^2.1.0"
+  checksum: 91108366011572cc16e7037bd1bd720468cd2181e0785930efb37545fe2a5c0b9ba42f6f9fbe1c3c9bdd191caaf7c0e99b45a335d6e7f3be27df8b81be027640
+  languageName: node
+  linkType: hard
+
+"@material/button@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/button@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/density": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/focus-ring": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    "@material/touch-target": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 40050c107da2ee45a0cd9e2b265c4608bce4b92ef6e94c5661ef937a7efd2a4e31fd5d6a90c0785157609505112d35f429ddca1598bf665d75b84cd96c2d6f61
+  languageName: node
+  linkType: hard
+
+"@material/card@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/card@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 1a2122addb8d927d67a816a53f7c994b4da16a72d09c3f3fbd55533946c79506c97b08b357fc15716a24503812d80ff8c72d910d81c43ec0d339926642e94a32
+  languageName: node
+  linkType: hard
+
+"@material/checkbox@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/checkbox@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/density": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/focus-ring": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/touch-target": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 5b9303f295c715e6daebfa59e305fdfe9ba8493081e24dc6e8ad3e459ce1dbafc9da94446cfb03cd749eaed3069afcd67c73fafdfac974f847e5cff0f1de6ed1
+  languageName: node
+  linkType: hard
+
+"@material/chips@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/chips@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/checkbox": "npm:15.0.0-canary.a246a4439.0"
+    "@material/density": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/focus-ring": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    "@material/touch-target": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    safevalues: "npm:^0.3.4"
+    tslib: "npm:^2.1.0"
+  checksum: 48414d345b56e6ec969070e17d41453af6605808a840fc767b4bb759f266626404421250c151285c5dfb81b851454c4ed7d45e9e8844671811626247ab07fbda
+  languageName: node
+  linkType: hard
+
+"@material/circular-progress@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/circular-progress@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/progress-indicator": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: c9e0ece9b3719b18b44c9c258ad23e971d2958bd556b095dab05d13e6af21193ab250adc0289e509d24948198d8f62b4da43313898da46849c4b4614908ba665
+  languageName: node
+  linkType: hard
+
+"@material/data-table@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/data-table@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/checkbox": "npm:15.0.0-canary.a246a4439.0"
+    "@material/density": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/icon-button": "npm:15.0.0-canary.a246a4439.0"
+    "@material/linear-progress": "npm:15.0.0-canary.a246a4439.0"
+    "@material/list": "npm:15.0.0-canary.a246a4439.0"
+    "@material/menu": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/select": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    "@material/touch-target": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 7b3c69a4fba837286646a5e1c1b98239e7e38c4a187e754a2d64f59e421a485c81bfc8d8a1ac41b1633d5e8b77c8a60494b375a63616e3f1fb9edaba23079727
+  languageName: node
+  linkType: hard
+
+"@material/density@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/density@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    tslib: "npm:^2.1.0"
+  checksum: b64a1e25b374a2f908cc8ed318cb4fd2f6e15897bd36e3551de161e5711a0290ddbebdeb7851a2256236ae88174824b31d2dbe2e528a1dc2b03c78bb09b428f4
+  languageName: node
+  linkType: hard
+
+"@material/dialog@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/dialog@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/button": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/icon-button": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    "@material/touch-target": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 3d11377bdec0f693c63eb4446423897f944d7d0b849f35f576eaf33d44886ee6ae9d3bfcde40f10a96d5c064aa66c3c7840e98b9aa530acd7a899aa0271433aa
+  languageName: node
+  linkType: hard
+
+"@material/dom@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/dom@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 72273c3718a00623b002022e7e637181556507297c1c91c97ccdd36b0e5f02a0873bfb361f3515ac848bb4c4cb67e8b65b750fa7dd50fad4e1531fa30bf5693f
+  languageName: node
+  linkType: hard
+
+"@material/drawer@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/drawer@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/list": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 3c40c8472da1d81d8d0fed06f18c4b06755b26b4a3f5c6cca36a638541ff025016936577e110770b499e7622bef7cde30d6c1760cc8671a9cb2e6c42811da27e
+  languageName: node
+  linkType: hard
+
+"@material/elevation@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/elevation@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 0acaebca8a20e8ad2afbe404f2c96470064907e600ea3e2819a615af2e6350c746ccee4bff04ff73fa2b12bec5842b455b90b59ca64c2e440f2ab8bf2a0e042f
+  languageName: node
+  linkType: hard
+
+"@material/fab@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/fab@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/focus-ring": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    "@material/touch-target": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 1b5864c33e709185ccb463c166fcbced50be08b6966a01a783caba3996197de5e131d383b529733f162f1c856e08942e3bd8a637c14a4316256a33d39faa4eae
+  languageName: node
+  linkType: hard
+
+"@material/feature-targeting@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/feature-targeting@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    tslib: "npm:^2.1.0"
+  checksum: 3f8888abf48d22e209605711432f387affc34e702786fdf370978a77be436771053326b8eb9424f6b9176f4db676db7a7f3e1536eb13a67081876a494a730840
+  languageName: node
+  linkType: hard
+
+"@material/floating-label@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/floating-label@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 75eb91b595118f93d13655f749cbc95674030203e7f24ac9dbf8643adb8d7fc8554429b6b76441b18870fbe58f51d63f5de5b637860c0decb66ad71c3bc9eb80
+  languageName: node
+  linkType: hard
+
+"@material/focus-ring@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/focus-ring@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+  checksum: 39667a1fa207d6cf09e332e56f99f6f36b4ea6889999aee5610c0b27c8201171377223f9884ad9c3e336ea09f49590b9610bddcf42eab6398e94a989fbc7c4b5
+  languageName: node
+  linkType: hard
+
+"@material/form-field@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/form-field@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 02a0a4099f279667b90a988e0893cdc8fa3287cb274263da09a8b39bf0c23fdaf27fa0ebe18d43c8f3b13d8ac20ba63402824d9f139f1a6400370747d23a91ef
+  languageName: node
+  linkType: hard
+
+"@material/icon-button@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/icon-button@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/density": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/focus-ring": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/touch-target": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: ecc6143e7b3936dc727d62c7be9e1eb0cde6635f9adc3eb8826d60fcb940c946f898eafbf55fdfc189fe5d4de58dbd8d24057cb6404537c065b5b4cc94dc1b50
+  languageName: node
+  linkType: hard
+
+"@material/image-list@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/image-list@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: fca013198acdda0ed424569b23ccacb295a9a2cbe5fc6d732e1a4de313c1910e28d25587418d795ba0494c8d0fc12705c76ca2b8b68d3d327d7915755431ec87
+  languageName: node
+  linkType: hard
+
+"@material/layout-grid@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/layout-grid@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    tslib: "npm:^2.1.0"
+  checksum: df84f0fbf3c040e71a991c24067ab07592f8fd23ee8177a331d4b1cbcd51e73f508eae025298c8740b13a97a475aa75592735200328cc74a013642e30681fb71
+  languageName: node
+  linkType: hard
+
+"@material/line-ripple@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/line-ripple@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 9133655362d636fd8a95d900de90034f050bd05ee087aee61e394e9e93357213e87ac4487553fa603a088d0075d6f2ce6618f1324fc1e1b2d5f5613afbe26c7c
+  languageName: node
+  linkType: hard
+
+"@material/linear-progress@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/linear-progress@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/progress-indicator": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: e02f9c7653a05b65698bfcda945eb874a75f8fbf6f26e0fe433c1db0252b0b240b552a492d821b78b348bb7332eb7e63ffb1a8ec484d55d2cac5fbdd63b0194d
+  languageName: node
+  linkType: hard
+
+"@material/list@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/list@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/density": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 00d28a6fc0a698b849af0763491c9b5e3cc92a86317bdce8b1a3efe1595c57c88134f9d4d605fa1e3c0fc2ad394039ab10ce3d4edbc9f5d847f0ef39c0bc5a26
+  languageName: node
+  linkType: hard
+
+"@material/menu-surface@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/menu-surface@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: d8dbffadea72ab2a14c6629888108b1299a4b200c887c6492ab455a9247f70ace69e62393c19fa4def3040da1b062c5783fdb3a690ff5a621e50d076de39d730
+  languageName: node
+  linkType: hard
+
+"@material/menu@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/menu@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/list": "npm:15.0.0-canary.a246a4439.0"
+    "@material/menu-surface": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: dd81425984f3513ad4de13c43a7ea9290172e000bfb6ef6bfe1de36e6b4216da58bd3cdd99dd1fcff957508745ccf0345772c3e1fd60203fbc77fe195f05d9ea
+  languageName: node
+  linkType: hard
+
+"@material/notched-outline@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/notched-outline@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/floating-label": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: ec6645f18b27234285d96a6c59ce4f5edafe17ec4f4cd797cc8ce70cba8b0b54273b09659d51578c57573b701a512a73b12298af2f2f0fdd83bf8d5df211fb20
+  languageName: node
+  linkType: hard
+
+"@material/progress-indicator@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/progress-indicator@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    tslib: "npm:^2.1.0"
+  checksum: e9079dcd8aed2e94965a03bdd1b57b02c3bcfafbfcbcc0ecc460eccda50f373f84c6a8f9ea737c3ff84c0763e86b6b8652e6c34ca0abdc2be128ef6956963286
+  languageName: node
+  linkType: hard
+
+"@material/radio@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/radio@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/density": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/focus-ring": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/touch-target": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 5385f79cee1d653cdc4918f8f157a0dba461d7afae71857960cf015ed3a7aa8bc8aadb1dba8284c00671ca4e9279178ec2a6b6a51f061fa2764900af63292d2f
+  languageName: node
+  linkType: hard
+
+"@material/ripple@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/ripple@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 41648f357cd467ff7e2b62bb5a135543bdaa2c6bce6d63e855c2378f03765806c6a2484db4e8ae8e8efe91006fd2269f6a9842bdf964a54f500b3356d33595f6
+  languageName: node
+  linkType: hard
+
+"@material/rtl@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/rtl@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: b47fa5a9cf3993dc31f611a3e7a027a20da73b0409d8061fc65b49a0042e7badea9b4f06fed812fb943c943446f3f1f469aabf12d436b6fce9c4d0dbcbc2355d
+  languageName: node
+  linkType: hard
+
+"@material/segmented-button@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/segmented-button@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/touch-target": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 7c411ac0a2641148722f291a615de4252fdb6fdc38905eb8c858c0eb3a4b56a71a99132938e77946b0dee0b46c00a06e1940c5c7b0c59cb7f1b7172d356d2b7a
+  languageName: node
+  linkType: hard
+
+"@material/select@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/select@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/density": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/floating-label": "npm:15.0.0-canary.a246a4439.0"
+    "@material/line-ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/list": "npm:15.0.0-canary.a246a4439.0"
+    "@material/menu": "npm:15.0.0-canary.a246a4439.0"
+    "@material/menu-surface": "npm:15.0.0-canary.a246a4439.0"
+    "@material/notched-outline": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 948bc61566ea14e44cf5f576b6edd586c648e20f66be129c647470270affd99d4290e97e1bef32024d7a74cc96366d54effa6a53a8b5d06c79f2849e03214fea
+  languageName: node
+  linkType: hard
+
+"@material/shape@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/shape@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: f362fc87b03f76207dc95574971b7da528f8bbb2a8ceb27ceccad0276445fe231ccb92d53a72872b78e4f30773a8c62dfbd565905898bef90e3ee901d31ded01
+  languageName: node
+  linkType: hard
+
+"@material/slider@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/slider@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: d1e4547f8266383bc5af605e69ec210c61584a9ff1e228058693710e2ee9583a8e31dfdcd5b797b9889a1a33999b238344c7f0206a7bc7d94d0e8e96c29aa454
+  languageName: node
+  linkType: hard
+
+"@material/snackbar@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/snackbar@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/button": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/icon-button": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: bfa4e0a63df7dc752486e218c6b57f98654ab13b4f83037d94adc2eaf97101a06477040775ffad8ce418a4bd3b51c59121baecb2063ce216d537402e9b2262c7
+  languageName: node
+  linkType: hard
+
+"@material/switch@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/switch@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/density": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/focus-ring": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    safevalues: "npm:^0.3.4"
+    tslib: "npm:^2.1.0"
+  checksum: f1942f38bab4fe09d278b5034a0ff7864cfaaf01451e08d949398d512663f8858c296ae10f14122e4c065909af40c91e7691e802ae82909c5074bf34a1068dcc
+  languageName: node
+  linkType: hard
+
+"@material/tab-bar@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/tab-bar@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/density": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tab": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tab-indicator": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tab-scroller": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: c5afcfa0f62ee7c872b5e78d5662271fd1f51e97a0da9417f864a7dd59d649d7ff2637793db98652f9b724e0144bb3d0eda8f89c7f15ce6c9ee9d74cd79fe234
+  languageName: node
+  linkType: hard
+
+"@material/tab-indicator@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/tab-indicator@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: b304e33280319eb78d6dcfb45c9b8a3707fd29b1eb027337a7ed6bb1a759c869e93ff08ec662e82527448fde2ecc0d2f3150383c7bc888bca3a8774e59c14dbe
+  languageName: node
+  linkType: hard
+
+"@material/tab-scroller@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/tab-scroller@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tab": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 5ff2d3aa4a420755f9fcc75c8bcc20ef0ef2e50277ca63309107b131f16ba35d4c8380c5ad1acaa67089c2f4042b736df466cf237d1d6b279902d1bd1f025005
+  languageName: node
+  linkType: hard
+
+"@material/tab@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/tab@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/focus-ring": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tab-indicator": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: f73ab5b12301ab3f58cca96c740c42a15d2a1bf7197b78ec91919e20504fad2c6c3e53c3643a0a756aa99b5a988bb513aa4f2d9538c5c5bf1beff594666c4da2
+  languageName: node
+  linkType: hard
+
+"@material/textfield@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/textfield@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/density": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/floating-label": "npm:15.0.0-canary.a246a4439.0"
+    "@material/line-ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/notched-outline": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 66e9cc269e54152dad76afea67a4bb3a843a696ddc07abc7466d136848d7f2655d6da3618538b6234eadab3872249903d5070f1e3986ac5584c579d8aafb8f89
+  languageName: node
+  linkType: hard
+
+"@material/theme@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/theme@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 1234676dd8b2d4c83dd10eda030e4508f65519fc2e49adbd5edd6e13b5b7601dde1797c2ee5bbf7b0f7b043a6c1ee8d0950e6b9924c553a5c5c47571a9d59001
+  languageName: node
+  linkType: hard
+
+"@material/tokens@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/tokens@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+  checksum: b898a3f68e29e389497e83365dd519f0d4f5b3a360bc6e20028fa74ecc26845b3c41116d9ab8e2bec06e1bfffd46962e8b0dc91450d1967d949e178e1d2ebd99
+  languageName: node
+  linkType: hard
+
+"@material/tooltip@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/tooltip@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/button": "npm:15.0.0-canary.a246a4439.0"
+    "@material/dom": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/tokens": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    safevalues: "npm:^0.3.4"
+    tslib: "npm:^2.1.0"
+  checksum: 7962d2eebbc3696907b1eae8282cd37d4d61a15605c843c91cdbab1bd632be434a2242e3fdb014add807d450514bfc681cab75dab7da46747675015afbbffdc2
+  languageName: node
+  linkType: hard
+
+"@material/top-app-bar@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/top-app-bar@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/animation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/elevation": "npm:15.0.0-canary.a246a4439.0"
+    "@material/ripple": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/shape": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    "@material/typography": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 1400b3b5f38811b039022fd86bb8b294d86b2a871e66b2bd1d651f37b8389e186a578b197fcf7691254c3b7b8c5a3ef478cbed0955a2269ecda961c9fecebfa0
+  languageName: node
+  linkType: hard
+
+"@material/touch-target@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/touch-target@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/base": "npm:15.0.0-canary.a246a4439.0"
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/rtl": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 2dab7d5cfabaa63aa8873cca37b75914a001058626fdf5c57cc11ef3fb52e874130171e941f5b08f97c8dbafec12c309a1744cb5c75f66d73016a87a561ba447
+  languageName: node
+  linkType: hard
+
+"@material/typography@npm:15.0.0-canary.a246a4439.0":
+  version: 15.0.0-canary.a246a4439.0
+  resolution: "@material/typography@npm:15.0.0-canary.a246a4439.0"
+  dependencies:
+    "@material/feature-targeting": "npm:15.0.0-canary.a246a4439.0"
+    "@material/theme": "npm:15.0.0-canary.a246a4439.0"
+    tslib: "npm:^2.1.0"
+  checksum: 07bcce25fcc6a38cb95a298cf101c78081eeebc6644e0d306a2fbd43ff0c0b7ea05e238b2cbcf9ac2f606e4e1519674e95da4ed2a1e1c876323feb6249ffd96a
   languageName: node
   linkType: hard
 
@@ -14760,7 +15645,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"parse5@npm:^7.0.0, parse5@npm:^7.1.1":
+"parse5@npm:^7.0.0, parse5@npm:^7.1.1, parse5@npm:^7.1.2":
   version: 7.1.2
   resolution: "parse5@npm:7.1.2"
   dependencies:
@@ -16231,6 +17116,13 @@ __metadata:
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: 7e3c8b2e88a1841c9671094bbaeebd94448111dd90a81a1f606f3f67708a6ec57763b3b47f06da09fc6054193e0e6709e77325415dc8422b04497a8070fa02d4
+  languageName: node
+  linkType: hard
+
+"safevalues@npm:^0.3.4":
+  version: 0.3.4
+  resolution: "safevalues@npm:0.3.4"
+  checksum: 28d5b8bea34f4b51f5d9960a5abec07885ea57df3e21f124c9343208053b735ee5d9153702a7552040dd5732243fc7c9ffe7b6c395225b19a5d561f0a9f6e1f3
   languageName: node
   linkType: hard
 

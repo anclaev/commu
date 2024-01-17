@@ -6,6 +6,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 
+import { BgComponent } from './shared/bg/bg.component';
+import { randomNum } from './shared/utils';
+
 @Component({
   standalone: true,
   imports: [
@@ -14,9 +17,15 @@ import { AuthModule } from './auth/auth.module';
     SharedModule,
     AuthModule,
     DashboardModule,
+    BgComponent,
   ],
   selector: 'comduty-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
 })
-export class AppComponent {}
+export class AppComponent {
+  public background: string;
+
+  constructor() {
+    this.background = '/assets/bg/' + randomNum(1, 3);
+  }
+}

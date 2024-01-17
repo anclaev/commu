@@ -2,10 +2,10 @@
   --color-content: #fff;
   --color-primary: #facc6d;
   --color-primary-05: rgba(250, 204, 109, 0.5);
-  --color-primary-light: #dcbf9d;
-  --color-primary-dark: #dc9665;
+  --color-primary-light: rgb(220, 191, 157);
+  --color-primary-dark: rgb(220, 150, 101);
   --font-family: Lato, Roboto, sans-serif;
-  --color-background: linear-gradient(108deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%);
+  --color-background: linear-gradient(108deg, rgba(220, 191, 157, 0.9) 0%, rgba(220, 150, 101, 0.9) 100%);
   --mdc-filled-text-field-container-color: transparent;
   --mat-form-field-state-layer-color: transparent;
   --mdc-filled-text-field-focus-label-text-color: var(--color-content);

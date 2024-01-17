@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://cd.anclaev.com",
+    "target": "https://cd-api.anclaev.com",
     "secure": true,
     "pathRewrite": {
       "^/api": ""

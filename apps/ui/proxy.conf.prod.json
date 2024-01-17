@@ -1,10 +1,12 @@
 {
   "/api": {
     "target": "https://cd-api.anclaev.com",
-    "secure": false,
+    "secure": true,
+    "logLevel": "debug",
     "pathRewrite": {
       "^/api": ""
     },
+
     "changeOrigin": true
   }
 }

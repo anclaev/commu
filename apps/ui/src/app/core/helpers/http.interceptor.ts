@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { API_URL } from 'apps/ui/src/environments/environment';
+
 import {
   HttpInterceptor,
   HttpEvent,
@@ -17,6 +19,7 @@ export class HttpRequestInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
     req = req.clone({
+      url: `${API_URL}${req.url}`,
       withCredentials: true,
     });
     return next.handle(req);

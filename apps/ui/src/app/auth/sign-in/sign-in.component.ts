@@ -90,8 +90,7 @@ export class SignInComponent implements OnInit {
     if (!this.validateForm(login, password)) return;
 
     this.auth.login(login.value.trim(), password.value.trim()).subscribe({
-      error: (error) => {
-        console.log(error);
+      error: () => {
         this.showAlarm('Вход не выполнен');
         this.signInForm.controls['password'].setValue('');
       },

@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./bg.component.sass'],
   template: `
     <video
+      loading="lazy"
       [muted]="true"
       [loop]="true"
       [autoplay]="true"

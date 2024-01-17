@@ -1,7 +1,8 @@
 import { Route } from '@angular/router';
-import { Role } from '@prisma/client';
 
 import { authGuard } from './auth/auth.guard';
+
+import { ROLE } from './core';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminComponent } from './admin/admin.component';
@@ -17,7 +18,7 @@ export const appRoutes: Route[] = [
   {
     path: 'admin',
     data: {
-      roles: [Role.Administrator],
+      roles: [ROLE.ADMINISTRATOR],
     },
     component: AdminComponent,
     canActivate: [authGuard],

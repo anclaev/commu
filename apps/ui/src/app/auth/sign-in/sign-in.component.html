@@ -1,25 +1,21 @@
-<img
-  src="/assets/svg/logo.svg"
-  alt="Comduty Logo"
-  width="275px"
-  height="52px"
-/>
-<comduty-form [formGroup]="signInForm" [title]="'Войти'" (handler)="signIn()">
-  <label for="login">Логин</label>
-  <input
-    type="text"
-    autocomplete="off"
-    id="login"
-    formControlName="login"
-    placeholder="Логин"
+<form class="auth-sign-in__form" [formGroup]="signInForm" (ngSubmit)="signIn()">
+  <img
+    src="/assets/svg/logo.svg"
+    alt="Comduty Logo"
+    width="157"
+    height="30"
+    class="auth-sign-in__form__logo"
   />
-  <label for="password">Пароль</label>
-  <input
-    type="password"
-    autocomplete="off"
-    id="password"
-    formControlName="password"
-    placeholder="Пароль"
-  />
-</comduty-form>
-<span>Я не помню логин или пароль</span>
+  <mat-form-field class="auth-sign-in__form-input">
+    <mat-label>Логин</mat-label>
+    <input matInput formControlName="login" required />
+  </mat-form-field>
+  <mat-form-field class="auth-sign-in__form-input">
+    <mat-label>Пароль</mat-label>
+    <input matInput type="password" formControlName="password" required />
+  </mat-form-field>
+  <button mat-stroked-button class="auth-sign-in__form__submit">Войти</button>
+  <span class="auth-sign-in__form__label" (click)="recover()"
+    >Я не помню логин или пароль</span
+  >
+</form>

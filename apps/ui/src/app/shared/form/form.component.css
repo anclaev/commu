@@ -1,8 +1,0 @@
-:host > form {
-  display: flex;
-  flex-direction: column;
-}
-
-:host > form > button {
-  margin-top: 30px;
-}

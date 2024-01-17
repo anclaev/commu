@@ -1,0 +1,16 @@
+:host {
+  width: 100%;
+  display: flex;
+}
+
+.alarm__label {
+  flex-grow: 1;
+}
+
+.alarm__button {
+  all: unset;
+  background: transparent;
+  cursor: pointer;
+  color: #fff;
+  opacity: 0.5;
+}

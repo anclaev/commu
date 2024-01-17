@@ -1,6 +1,6 @@
 import { Request } from 'express';
 
-import { Auth } from './auth';
+import { Auth } from 'shared/interfaces/auth-credentials';
 
 export interface AuthenticatedRequest extends Request {
   user: Auth;

@@ -8,7 +8,7 @@ import { UUID } from 'crypto';
 
 import { SignInCommand } from '../commands/sign-in';
 
-import { Auth } from '../interfaces/auth';
+import { Auth } from 'shared/interfaces/auth-credentials';
 
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {

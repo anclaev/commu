@@ -5,6 +5,7 @@ import {
   QueryBus,
 } from '@nestjs/cqrs';
 
+import { BadRequestException } from '@nestjs/common';
 import { Employee } from '@prisma/client';
 
 import { GetEmployeeQuery } from '../../employee/queries/get-employee';
@@ -28,6 +29,10 @@ export class SignInHandler implements ICommandHandler<SignInCommand> {
         login,
       })
     );
+
+    if (!user) {
+      throw new BadRequestException('Incorrect login');
+    }
 
     await this.commandBus.execute<VerifyPasswordCommand, boolean>(
       new VerifyPasswordCommand({

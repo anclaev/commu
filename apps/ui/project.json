@@ -26,6 +26,12 @@
       },
       "configurations": {
         "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/ui/proxy.conf.json",
+              "with": "apps/ui/proxy.conf.prod.json"
+            }
+          ],
           "budgets": [
             {
               "type": "initial",

@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://cd.anclaev.com",
+    "secure": true,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true
+  }
+}

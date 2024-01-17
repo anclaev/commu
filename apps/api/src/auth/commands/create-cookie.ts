@@ -2,7 +2,7 @@ import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { JwtService } from '@nestjs/jwt';
 
 import { Cookie } from '@shared/interfaces/cookie';
-import { Auth } from '../interfaces/auth';
+import { Auth } from '@shared/interfaces/auth-credentials';
 
 import { ConfigService } from '../../common/services/config.service';
 

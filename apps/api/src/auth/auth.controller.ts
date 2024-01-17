@@ -3,9 +3,9 @@ import { Response } from 'express';
 
 import { AuthService } from './auth.service';
 
+import { Auth as IAuth } from 'shared/interfaces/auth-credentials';
 import { AuthenticatedRequest } from './interfaces/auth-request';
 import { Auth, LocalAuth, RefreshAuth } from './decorators';
-import { Auth as IAuth } from './interfaces/auth';
 
 @Controller('auth')
 export class AuthController {
@@ -22,7 +22,7 @@ export class AuthController {
   async signIn(@Req() req: AuthenticatedRequest, @Res() res: Response) {
     const response = await this.auth.signIn(req.user, req.fingerprint, res);
 
-    return response.sendStatus(200);
+    return response.send(req.user);
   }
 
   @Auth()

@@ -1,4 +1,4 @@
-import { Auth } from '../interfaces/auth';
+import { Auth } from 'shared/interfaces/auth-credentials';
 
 import { Fingerprint } from 'shared/interfaces/fingerprint';
 

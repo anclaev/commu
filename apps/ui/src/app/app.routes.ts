@@ -13,6 +13,11 @@ export const appRoutes: Route[] = [
     canActivate: [authGuard],
   },
   {
+    path: 'admin',
+    component: DashboardComponent,
+    canActivate: [authGuard],
+  },
+  {
     path: 'auth',
     component: AuthComponent,
   },

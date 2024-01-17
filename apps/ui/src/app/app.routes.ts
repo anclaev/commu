@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { Role } from '@prisma/client';
 
 import { authGuard } from './auth/auth.guard';
 
@@ -15,6 +16,9 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'admin',
+    data: {
+      roles: [Role.User],
+    },
     component: AdminComponent,
     canActivate: [authGuard],
   },

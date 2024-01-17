@@ -59,9 +59,17 @@ export class AuthService {
     );
   }
 
-  check(returnUrl: string): Observable<boolean> {
+  check(returnUrl: string, roles?: string[]): Observable<boolean> {
     return this.getCredentials().pipe(
       map((data) => {
+        sessionStorage.setItem('user', JSON.stringify(data));
+
+        if (roles && roles.indexOf(data.role) === -1) {
+          this.router.navigate(['/']);
+
+          return false;
+        }
+
         if (data && returnUrl.includes('/auth')) {
           this.router.navigate(['/']);
         }

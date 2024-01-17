@@ -41,8 +41,6 @@ const bootstrap = async () => {
 
   app.enableCors({
     origin: allowedOrigins,
-    allowedHeaders: '*',
-    methods: '*',
     credentials: true,
   });
 

@@ -5,7 +5,7 @@ import { QueryBus } from '@nestjs/cqrs';
 import { Employee } from '@prisma/client';
 import { Request } from 'express';
 
-import { Auth } from '../interfaces/auth';
+import { Auth } from 'shared/interfaces/auth-credentials';
 
 import { ConfigService } from '../../common/services/config.service';
 
@@ -26,7 +26,7 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
   }
 
   async validate({ id, session }: Auth): Promise<Auth> {
-    const { login, role } = await this.query.execute<
+    const { login, role, name } = await this.query.execute<
       GetEmployeeQuery,
       Employee
     >(
@@ -40,6 +40,7 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
       role,
       login,
       session,
+      name,
     };
   }
 }

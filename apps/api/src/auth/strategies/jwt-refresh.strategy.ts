@@ -10,7 +10,7 @@ import { Cookie } from '@shared/interfaces/cookie';
 import { ConfigService } from '../../common/services/config.service';
 import { cookieToString } from '../../common/utils/cookie';
 
-import { Auth } from '../interfaces/auth';
+import { Auth } from 'shared/interfaces/auth-credentials';
 
 import { GetSessionByIdQuery } from '../queries/get-session-by-id';
 import { RemoveSessionCommand } from '../commands/remove-session';

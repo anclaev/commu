@@ -5,8 +5,8 @@ import { Response } from 'express';
 import moment from 'moment';
 
 import { Fingerprint } from '@shared/interfaces/fingerprint';
+import { Auth } from '@shared/interfaces/auth-credentials';
 import { Cookie } from '@shared/interfaces/cookie';
-import { Auth } from './interfaces/auth';
 
 import { cookieToString } from '../common/utils/cookie';
 

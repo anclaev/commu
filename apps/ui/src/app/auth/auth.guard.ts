@@ -10,7 +10,7 @@ import {
 import { AuthService } from './auth.service';
 
 export const authGuard: CanActivateFn = (
-  next: ActivatedRouteSnapshot,
+  _next: ActivatedRouteSnapshot,
   state: RouterStateSnapshot
 ) => {
   const authService = inject(AuthService);
@@ -18,5 +18,5 @@ export const authGuard: CanActivateFn = (
 
   if (user) return true;
 
-  return authService.check(state.url, true);
+  return authService.check(state.url);
 };

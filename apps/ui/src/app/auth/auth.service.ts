@@ -59,14 +59,18 @@ export class AuthService {
     );
   }
 
-  check(returnUrl: string, redirect?: boolean): Observable<boolean> {
+  check(returnUrl: string): Observable<boolean> {
     return this.getCredentials().pipe(
       map((data) => {
+        if (data && returnUrl.includes('/auth')) {
+          this.router.navigate(['/']);
+        }
+
         return !!data;
       }),
       catchError((err) => {
         this.router.navigate(['/auth'], {
-          queryParams: { returnUrl, redirect },
+          queryParams: { returnUrl },
         });
 
         return of(err !== 'Unauthorized');

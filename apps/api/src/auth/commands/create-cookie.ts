@@ -37,7 +37,7 @@ export class CreateCookieHandler
           value: '',
           httpOnly: true,
           secure: isProduction,
-          path: '/auth/refresh',
+          path: '/api/auth/refresh',
           maxAge: 0,
         },
       ];
@@ -63,7 +63,7 @@ export class CreateCookieHandler
         httpOnly: true,
         secure: isProduction,
         maxAge: Number(expiration),
-        path: type === 'auth' ? '/' : '/auth/refresh',
+        path: type === 'auth' ? '/' : '/api/auth/refresh',
       },
     ];
   }

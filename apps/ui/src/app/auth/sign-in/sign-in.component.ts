@@ -4,10 +4,11 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Dialog } from '@angular/cdk/dialog';
-import { Component } from '@angular/core';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Dialog } from '@angular/cdk/dialog';
 
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 
@@ -21,19 +22,37 @@ import { AuthService } from '../auth.service';
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.scss',
 })
-export class SignInComponent {
+export class SignInComponent implements OnInit {
   signInForm: FormGroup;
+
+  private returnUrl: string = '/';
 
   constructor(
     private fb: FormBuilder,
     private sb: MatSnackBar,
     private dialog: Dialog,
-    private auth: AuthService
+    private auth: AuthService,
+    private route: ActivatedRoute,
+    private router: Router
   ) {
+    if (this.auth.currentUser) {
+      this.router.navigate(['/']);
+    }
+
     this.signInForm = fb.group({
       login: ['', [Validators.required, Validators.minLength(2)]],
       password: ['', [Validators.required, Validators.minLength(2)]],
     });
+  }
+
+  ngOnInit(): void {
+    const alreadyAuthenticated = Boolean(
+      this.route.snapshot.queryParams['redirect']
+    );
+
+    if (!alreadyAuthenticated) this.router.navigate(['/']);
+
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   private showAlarm(data: string) {
@@ -78,6 +97,8 @@ export class SignInComponent {
       },
       next: (data) => {
         this.showAlarm(`Привет, ${data.name || data.role}!`);
+
+        this.router.navigate([this.returnUrl]);
       },
     });
   }

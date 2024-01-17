@@ -38,6 +38,6 @@ export class AuthController {
   async refresh(@Req() req: AuthenticatedRequest, @Res() res: Response) {
     const response = await this.auth.refresh(req.user, res);
 
-    return response.sendStatus(200);
+    return response.send(req.user);
   }
 }

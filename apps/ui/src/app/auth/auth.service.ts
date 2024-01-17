@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { Auth } from 'shared/interfaces/auth-credentials';
 
 import { ENDPOINTS } from '../core';
+import { state } from '@angular/animations';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -62,14 +63,12 @@ export class AuthService {
   check(returnUrl: string, roles?: string[]): Observable<boolean> {
     return this.getCredentials().pipe(
       map((data) => {
-        sessionStorage.setItem('user', JSON.stringify(data));
-
         if (roles && roles.indexOf(data.role) === -1) {
           this.router.navigate(['/']);
 
           return false;
         }
-
+        console.log(returnUrl);
         if (data && returnUrl.includes('/auth')) {
           this.router.navigate(['/']);
         }

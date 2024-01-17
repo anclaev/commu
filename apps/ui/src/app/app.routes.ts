@@ -17,7 +17,7 @@ export const appRoutes: Route[] = [
   {
     path: 'admin',
     data: {
-      roles: [Role.User],
+      roles: [Role.Administrator],
     },
     component: AdminComponent,
     canActivate: [authGuard],

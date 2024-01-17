@@ -38,10 +38,13 @@ body {
   height: 100%;
 }
 
+html {
+  background: var(--color-background);
+}
+
 body {
   margin: 0;
   font-family: var(--font-family);
-  background: var(--color-background);
   color: var(--color-content);
 }
 

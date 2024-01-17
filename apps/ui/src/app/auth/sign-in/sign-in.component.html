@@ -15,5 +15,7 @@
     <input matInput type="password" formControlName="password" required />
   </mat-form-field>
   <button mat-stroked-button class="auth-sign-in__form__submit">Войти</button>
-  <span class="auth-sign-in__form__label">Я не помню логин или пароль</span>
+  <span class="auth-sign-in__form__label" (click)="recover()"
+    >Я не помню логин или пароль</span
+  >
 </form>

@@ -26,9 +26,6 @@ export class AppComponent {
   public background: string;
 
   constructor() {
-    this.background =
-      'https://github.com/anclaev/vanne-ng-legacy/raw/main/src/assets/media/bg/' +
-      randomNum(1, 2) +
-      '-v1';
+    this.background = '/assets/bg/' + randomNum(1, 2) + '-v1';
   }
 }

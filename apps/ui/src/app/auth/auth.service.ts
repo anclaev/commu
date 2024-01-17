@@ -6,8 +6,6 @@ import { Router } from '@angular/router';
 import { Auth } from 'shared/interfaces/auth-credentials';
 
 import { ENDPOINTS } from '../core';
-import { state } from '@angular/animations';
-
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private user$$: BehaviorSubject<Auth | null> =

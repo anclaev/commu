@@ -65,7 +65,6 @@ export class AuthService {
         return !!data;
       }),
       catchError((err) => {
-        console.log(err);
         this.router.navigate(['/auth'], {
           queryParams: { returnUrl, redirect },
         });

@@ -13,7 +13,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "comduty",
+            "prefix": "commu",
             "style": "camelCase"
           }
         ],
@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "comduty",
+            "prefix": "commu",
             "style": "kebab-case"
           }
         ]

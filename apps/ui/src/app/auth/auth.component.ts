@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'comduty-auth',
+  selector: 'commu-auth',
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.css',
 })

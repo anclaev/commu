@@ -16,7 +16,7 @@ describe('LoggerService', () => {
 
   describe('ctx', () => {
     it('should be return current context', async () => {
-      expect(loggerService.ctx).toBe('Comduty');
+      expect(loggerService.ctx).toBe('Commu');
     });
   });
 

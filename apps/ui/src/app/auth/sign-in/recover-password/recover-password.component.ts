@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 import { SnackbarService } from '../../../shared/snackbar/snackbar.service';
 
 @Component({
-  selector: 'comduty-recover-password',
+  selector: 'commu-recover-password',
   templateUrl: './recover-password.component.html',
   styleUrl: './recover-password.component.scss',
 })

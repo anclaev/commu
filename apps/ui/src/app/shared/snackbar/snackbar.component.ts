@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
   imports: [MatIconModule],
   standalone: true,
-  selector: 'comduty-snackbar',
+  selector: 'commu-snackbar',
   templateUrl: './snackbar.component.html',
   styleUrl: './snackbar.component.scss',
 })

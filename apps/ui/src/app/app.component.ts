@@ -28,7 +28,7 @@ import { QuoteComponent } from './shared/quote/quote.component';
     LoaderComponent,
   ],
   animations: [enterOpacity(300)],
-  selector: 'comduty-root',
+  selector: 'commu-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

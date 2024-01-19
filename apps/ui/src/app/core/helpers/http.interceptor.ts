@@ -1,6 +1,5 @@
+import { Observable, map } from 'rxjs';
 import { Injectable } from '@angular/core';
-
-import { API_URL } from 'apps/ui/src/environments/environment';
 
 import {
   HttpInterceptor,
@@ -10,19 +9,38 @@ import {
   HTTP_INTERCEPTORS,
 } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import { API_URL } from '../../../environments/environment';
+
+import { SnackbarService } from '../../shared/snackbar/snackbar.service';
+import { LoaderService } from '../../shared/loader/loader.service';
 
 @Injectable()
 export class HttpRequestInterceptor implements HttpInterceptor {
+  constructor(
+    private loader: LoaderService,
+    private snackbar: SnackbarService
+  ) {}
+
   intercept(
     req: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    req = req.clone({
-      url: `${API_URL}${req.url}`,
-      withCredentials: true,
-    });
-    return next.handle(req);
+    if (!req.url.includes('assets')) {
+      req = req.clone({
+        url: `${API_URL}${req.url}`,
+        withCredentials: true,
+      });
+    }
+
+    this.loader.start();
+
+    return next.handle(req).pipe(
+      map((event: HttpEvent<unknown>) => {
+        this.loader.stop();
+
+        return event;
+      })
+    );
   }
 }
 

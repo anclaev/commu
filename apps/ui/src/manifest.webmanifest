@@ -2,23 +2,25 @@
   "name": "Comduty",
   "short_name": "Comduty",
   "description": "Duty us",
+  "theme_color": "#1e1e1e",
+  "background_color": "#1e1e1e",
+  "scope": "./",
+  "start_url": "/?source=pwa",
   "icons": [
     {
       "src": "/assets/fav/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
       "src": "/assets/fav/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     }
   ],
-  "theme_color": "#1e1e1e",
-  "background_color": "#1e1e1e",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "/",
-  "id": "/?source=pwa",
-  "start_url": "/?source=pwa"
+  "id": "/?source=pwa"
 }

@@ -298,6 +298,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@angular-devkit/core@npm:17.1.0":
+  version: 17.1.0
+  resolution: "@angular-devkit/core@npm:17.1.0"
+  dependencies:
+    ajv: "npm:8.12.0"
+    ajv-formats: "npm:2.1.1"
+    jsonc-parser: "npm:3.2.0"
+    picomatch: "npm:3.0.1"
+    rxjs: "npm:7.8.1"
+    source-map: "npm:0.7.4"
+  peerDependencies:
+    chokidar: ^3.5.2
+  peerDependenciesMeta:
+    chokidar:
+      optional: true
+  checksum: b6da8114c053e489a6a820bd546ff05d9a55f7eda89af39ec9f64350eb6e20933e34b212d15472934f5b77b79a8defe0b2c1a22a72520c102e85058601a5780e
+  languageName: node
+  linkType: hard
+
 "@angular-devkit/schematics@npm:13.3.11, @angular-devkit/schematics@npm:^13.3.0":
   version: 13.3.11
   resolution: "@angular-devkit/schematics@npm:13.3.11"
@@ -360,6 +379,19 @@ __metadata:
     ora: "npm:5.4.1"
     rxjs: "npm:7.8.1"
   checksum: 4dad921d57847bed002286a2c8f7976b8220eda2e9968ea9e1a43f0d3e5ebf7e12dd379acb7c20cce4250a996571b69eb37ece22eab4137dfa396fe4bf59d6a8
+  languageName: node
+  linkType: hard
+
+"@angular-devkit/schematics@npm:17.1.0":
+  version: 17.1.0
+  resolution: "@angular-devkit/schematics@npm:17.1.0"
+  dependencies:
+    "@angular-devkit/core": "npm:17.1.0"
+    jsonc-parser: "npm:3.2.0"
+    magic-string: "npm:0.30.5"
+    ora: "npm:5.4.1"
+    rxjs: "npm:7.8.1"
+  checksum: d390626a11d73e7bf1808ca8361a454edf66e845af54945d243d44423a119450dd58ed0adef0827f2221b73bd65b33f5dc2ed3479e5f2f11bb32ec95fc960276
   languageName: node
   linkType: hard
 
@@ -658,6 +690,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@angular/pwa@npm:^17.1.0":
+  version: 17.1.0
+  resolution: "@angular/pwa@npm:17.1.0"
+  dependencies:
+    "@angular-devkit/schematics": "npm:17.1.0"
+    "@schematics/angular": "npm:17.1.0"
+    parse5-html-rewriting-stream: "npm:7.0.0"
+  peerDependencies:
+    "@angular/cli": ^17.0.0
+  peerDependenciesMeta:
+    "@angular/cli":
+      optional: true
+  checksum: 32386fada29665e3de58c893f38ceed48d6fa11fec2bb876a8d0db1ec7734ec2ebdb8ca832c256b5a88bfbcb2a35237c0a638f77ae36a1b03667b37e6c21a5b1
+  languageName: node
+  linkType: hard
+
 "@angular/router@npm:~17.0.0":
   version: 17.0.8
   resolution: "@angular/router@npm:17.0.8"
@@ -669,6 +717,20 @@ __metadata:
     "@angular/platform-browser": 17.0.8
     rxjs: ^6.5.3 || ^7.4.0
   checksum: 5ece49e2cd14a76ba2a585e948bb7137b6bff5802f643331caaf3cc2c021fdf99a9ed2a5e46ec6168e83da543a348a8e5563e3c9d655e8e1e3e28bdfca539d77
+  languageName: node
+  linkType: hard
+
+"@angular/service-worker@npm:~17.0.0":
+  version: 17.0.9
+  resolution: "@angular/service-worker@npm:17.0.9"
+  dependencies:
+    tslib: "npm:^2.3.0"
+  peerDependencies:
+    "@angular/common": 17.0.9
+    "@angular/core": 17.0.9
+  bin:
+    ngsw-config: ngsw-config.js
+  checksum: f04c967044d1440272c0389641a0adf34f4e74c85f3cd502bdd2e304a249c54b741dd7ebd266db9f10970c0d2ae30dd5b1509177e8ce2f6d1b670f74f567f7fc
   languageName: node
   linkType: hard
 
@@ -2514,7 +2576,9 @@ __metadata:
     "@angular/material": "npm:^17.0.5"
     "@angular/platform-browser": "npm:~17.0.0"
     "@angular/platform-browser-dynamic": "npm:~17.0.0"
+    "@angular/pwa": "npm:^17.1.0"
     "@angular/router": "npm:~17.0.0"
+    "@angular/service-worker": "npm:~17.0.0"
     "@compodoc/compodoc": "npm:^1.1.23"
     "@golevelup/ts-jest": "npm:^0.4.0"
     "@nestjs/common": "npm:^10.0.2"
@@ -5742,6 +5806,17 @@ __metadata:
     "@angular-devkit/schematics": "npm:17.0.9"
     jsonc-parser: "npm:3.2.0"
   checksum: 4ea4a515e7af2f7968276171c3fb6865737534144c9ba1eaf6af880e6af391ab15e785186c5925ecffe9f159c1ad0677025c04d230a2c6520e3e4e4129048c24
+  languageName: node
+  linkType: hard
+
+"@schematics/angular@npm:17.1.0":
+  version: 17.1.0
+  resolution: "@schematics/angular@npm:17.1.0"
+  dependencies:
+    "@angular-devkit/core": "npm:17.1.0"
+    "@angular-devkit/schematics": "npm:17.1.0"
+    jsonc-parser: "npm:3.2.0"
+  checksum: dcd60ed68bd36a9386529359e1f8058678b92387d44ec2b95dd6698ef6a1027c8f8fe24325e870deb4dc153f54723837ce3c967669ef8606451f952f7e4ce959
   languageName: node
   linkType: hard
 

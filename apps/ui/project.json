@@ -18,8 +18,8 @@
         "assets": [
           "apps/ui/src/favicon.ico",
           "apps/ui/src/assets",
-          "apps/ui/src/site.webmanifest",
-          "apps/ui/src/browserconfig.xml"
+          "apps/ui/src/browserconfig.xml",
+          "apps/ui/src/manifest.webmanifest"
         ],
         "styles": ["apps/ui/src/styles/theme.scss"],
         "scripts": []
@@ -38,7 +38,8 @@
               "maximumError": "4kb"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "serviceWorker": "apps/ui/ngsw-config.json"
         },
         "development": {
           "optimization": false,

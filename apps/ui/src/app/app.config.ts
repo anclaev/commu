@@ -1,5 +1,11 @@
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+
+import {
+  ApplicationConfig,
+  importProvidersFrom,
+  isDevMode,
+} from '@angular/core';
+
 import { provideRouter, withViewTransitions } from '@angular/router';
 import { provideAngularSvgIcon } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,6 +17,7 @@ import { appRoutes } from './app.routes';
 import { SnackbarService } from './shared/snackbar/snackbar.service';
 import { LoaderService } from './shared/loader/loader.service';
 import { AuthService } from './auth/auth.service';
+import { provideServiceWorker } from '@angular/service-worker';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,5 +29,9 @@ export const appConfig: ApplicationConfig = {
     { provide: LoaderService, useClass: LoaderService },
     { provide: SnackbarService, useClass: SnackbarService },
     importProvidersFrom(HttpClientModule),
+    provideServiceWorker('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
   ],
 };

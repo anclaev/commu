@@ -1,5 +1,0 @@
--- AlterTable
-ALTER TABLE "Employee" ALTER COLUMN "name" DROP NOT NULL,
-ALTER COLUMN "surname" DROP NOT NULL,
-ALTER COLUMN "salary" DROP NOT NULL,
-ALTER COLUMN "rank" SET DEFAULT 'Private';

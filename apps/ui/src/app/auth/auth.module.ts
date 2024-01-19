@@ -8,9 +8,9 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { AuthComponent } from './auth.component';
-import { AuthService } from './auth.service';
 
 import { RecoverPasswordComponent } from './sign-in/recover-password/recover-password.component';
+import { SnackbarComponent } from '../shared/snackbar/snackbar.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
@@ -22,8 +22,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     MatIconModule,
     MatButtonModule,
     DialogModule,
+    SnackbarComponent,
   ],
-  providers: [AuthService],
   declarations: [AuthComponent, SignInComponent, RecoverPasswordComponent],
 })
 export class AuthModule {}

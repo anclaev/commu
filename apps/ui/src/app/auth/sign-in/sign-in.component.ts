@@ -5,16 +5,14 @@ import {
   Validators,
 } from '@angular/forms';
 
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
 import { Dialog } from '@angular/cdk/dialog';
+import { Subscription } from 'rxjs';
 
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 
-import { AlarmComponent } from '../../shared/alarm/alarm.component';
-import { SNACKBAR_CONFIG } from '../../shared/types/snackbar-config';
-
+import { SnackbarService } from '../../shared/snackbar/snackbar.service';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -22,16 +20,17 @@ import { AuthService } from '../auth.service';
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.scss',
 })
-export class SignInComponent implements OnInit {
+export class SignInComponent implements OnInit, OnDestroy {
   signInForm: FormGroup;
 
-  private returnUrl: string = '/';
+  private _returnUrl: string = '/';
+  private _unsubscribe: Subscription[] = [];
 
   constructor(
     private fb: FormBuilder,
-    private sb: MatSnackBar,
     private dialog: Dialog,
     private auth: AuthService,
+    private snackbar: SnackbarService,
     private route: ActivatedRoute,
     private router: Router
   ) {
@@ -46,14 +45,7 @@ export class SignInComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-  }
-
-  private showAlarm(data: string) {
-    this.sb.openFromComponent(AlarmComponent, {
-      ...SNACKBAR_CONFIG,
-      data,
-    });
+    this._returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   private validateForm(
@@ -61,17 +53,17 @@ export class SignInComponent implements OnInit {
     password: AbstractControl
   ): boolean {
     if (login.invalid && password.invalid) {
-      this.showAlarm('Некорректные данные');
+      this.snackbar.show('Некорректные данные');
       return false;
     }
 
     if (login.invalid) {
-      this.showAlarm('Некорректный логин');
+      this.snackbar.show('Некорректный логин');
       return false;
     }
 
     if (password.invalid) {
-      this.showAlarm('Некорректный пароль');
+      this.snackbar.show('Некорректный пароль');
       return false;
     }
 
@@ -83,17 +75,21 @@ export class SignInComponent implements OnInit {
 
     if (!this.validateForm(login, password)) return;
 
-    this.auth.login(login.value.trim(), password.value.trim()).subscribe({
-      error: () => {
-        this.showAlarm('Вход не выполнен');
-        this.signInForm.controls['password'].setValue('');
-      },
-      next: (data) => {
-        this.showAlarm(`Привет, ${data.name || data.role}!`);
+    this._unsubscribe.push(
+      this.auth.login(login.value.trim(), password.value.trim()).subscribe({
+        error: () => {
+          this.snackbar.show('Вход не выполнен');
+          this.signInForm.controls['password'].setValue('');
+        },
+        next: (data) => {
+          if (!data) return;
 
-        this.router.navigate([this.returnUrl]);
-      },
-    });
+          this.snackbar.show(`Привет, ${data!.name || data!.role}!`);
+
+          this.router.navigate([this._returnUrl]);
+        },
+      })
+    );
   }
 
   recover() {
@@ -101,5 +97,9 @@ export class SignInComponent implements OnInit {
       width: '90%',
       maxWidth: '440px',
     });
+  }
+
+  ngOnDestroy() {
+    this._unsubscribe.forEach((sb) => sb.unsubscribe());
   }
 }

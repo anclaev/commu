@@ -33,19 +33,16 @@ $ui-theme: mat.define-light-theme(
 // that you are using.
 @include mat.all-component-themes($ui-theme);
 
-html,
-body {
+html {
   height: 100%;
 }
 
-html {
-  background: var(--color-background);
-}
-
 body {
+  min-height: 100%;
   margin: 0;
   font-family: var(--font-family);
   color: var(--color-content);
+  background: var(--color-background);
 }
 
 p {

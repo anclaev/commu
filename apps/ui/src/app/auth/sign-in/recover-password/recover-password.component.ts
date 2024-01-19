@@ -1,10 +1,8 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogRef } from '@angular/cdk/dialog';
 import { Component } from '@angular/core';
 
-import { SNACKBAR_CONFIG } from '../../../shared/types/snackbar-config';
-import { AlarmComponent } from '../../../shared/alarm/alarm.component';
+import { SnackbarService } from '../../../shared/snackbar/snackbar.service';
 
 @Component({
   selector: 'comduty-recover-password',
@@ -16,7 +14,7 @@ export class RecoverPasswordComponent {
 
   constructor(
     private fb: FormBuilder,
-    private sb: MatSnackBar,
+    private snackbar: SnackbarService,
     public dialogRef: DialogRef<string>
   ) {
     this.recoverForm = fb.group({
@@ -27,23 +25,15 @@ export class RecoverPasswordComponent {
     });
   }
 
-  private showAlarm(data: string) {
-    this.sb.openFromComponent(AlarmComponent, {
-      ...SNACKBAR_CONFIG,
-      data,
-    });
-  }
-
   recover() {
     if (this.recoverForm.controls['email'].invalid) {
-      this.showAlarm('Некорректная почта');
+      this.snackbar.show('Некорректная почта');
       return;
     }
 
-    this.sb.openFromComponent(AlarmComponent, {
-      ...SNACKBAR_CONFIG,
-      data: `Ссылка для восстановления отправлена на: ${this.recoverForm.controls['email'].value}`,
-    });
+    this.snackbar.show(
+      `Ссылка для восстановления отправлена на: ${this.recoverForm.controls['email'].value}`
+    );
 
     this.dialogRef.close();
   }

@@ -30,7 +30,7 @@ export class AuthController {
   async logout(@Req() req: AuthenticatedRequest, @Res() res: Response) {
     const response = await this.auth.logout(req.user, res);
 
-    return response.sendStatus(200);
+    return response.send('{}');
   }
 
   @RefreshAuth()

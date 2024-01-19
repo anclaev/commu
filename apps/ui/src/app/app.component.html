@@ -1,1 +1,13 @@
-<router-outlet></router-outlet>
+<header @enterOpacity *ngIf="isAuthenticated" class="app-header">
+  <a class="app-btn app-btn--l app-header__icon" [routerLink]="['/']">
+    <svg-icon src="/assets/svg/icon.svg" />
+  </a>
+  <comduty-quote />
+  <button class="app-btn app-btn--r app-header__logout" (click)="logout()">
+    <svg-icon src="/assets/svg/logout.svg" />
+  </button>
+</header>
+<main class="app">
+  <router-outlet></router-outlet>
+</main>
+<comduty-loader />

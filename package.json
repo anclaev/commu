@@ -1,5 +1,5 @@
 {
-  "name": "@comduty/source",
+  "name": "@commu/source",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
@@ -20,7 +20,7 @@
     "test": "nx affected -t test",
     "e2e:api": "NX_SKIP_NX_CACHE=true nx run api-e2e:e2e",
     "e2e:ui": "NX_SKIP_NX_CACHE=true nx run ui-e2e:e2e",
-    "doc:api": "yarn compodoc apps/api -d ./docs/api -p apps/api/tsconfig.json -n \"Comduty API\"",
+    "doc:api": "yarn compodoc apps/api -d ./docs/api -p apps/api/tsconfig.json -n \"Commu API\"",
     "graph": "nx graph",
     "commit": "git commit -S"
   },

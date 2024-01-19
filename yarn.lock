@@ -2554,9 +2554,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@comduty/source@workspace:.":
+"@commu/source@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@comduty/source@workspace:."
+  resolution: "@commu/source@workspace:."
   dependencies:
     "@angular-devkit/build-angular": "npm:~17.0.0"
     "@angular-devkit/core": "npm:~17.0.0"

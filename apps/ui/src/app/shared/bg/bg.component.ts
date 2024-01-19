@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   imports: [CommonModule],
   standalone: true,
-  selector: 'comduty-bg',
+  selector: 'commu-bg',
   styleUrls: ['./bg.component.sass'],
   template: `
     <video

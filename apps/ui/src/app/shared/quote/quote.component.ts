@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'comduty-quote',
+  selector: 'commu-quote',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './quote.component.html',

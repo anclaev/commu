@@ -2,7 +2,7 @@
   "name": "ui",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "comduty",
+  "prefix": "commu",
   "sourceRoot": "apps/ui/src",
   "tags": [],
   "targets": {
@@ -95,7 +95,7 @@
       "executor": "@nx-tools/nx-docker:build",
       "options": {
         "push": true,
-        "tags": ["anclaev/comduty-ui:latest"]
+        "tags": ["anclaev/commu-ui:latest"]
       }
     }
   }

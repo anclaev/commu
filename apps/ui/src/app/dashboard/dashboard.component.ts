@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'comduty-dashboard',
+  selector: 'commu-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })

@@ -52,7 +52,7 @@
       "executor": "@nx-tools/nx-docker:build",
       "options": {
         "push": true,
-        "tags": ["anclaev/comduty-api:latest"]
+        "tags": ["anclaev/commu-api:latest"]
       }
     }
   },

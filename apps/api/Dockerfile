@@ -22,7 +22,7 @@ FROM node:${node_version} AS runtime
 ENV NODE_ENV production
 ENV API_PORT 3001
 
-WORKDIR /home/user/comduty/api
+WORKDIR /home/user/commu/api
 
 COPY --from=deps /api/node_modules ./node_modules
 COPY --from=deps /api/package.json ./package.json

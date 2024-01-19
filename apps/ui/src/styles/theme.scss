@@ -7,9 +7,9 @@
 
 @include mat.core();
 
-$ui-primary: mat.define-palette($comduty-primary-palette);
-$ui-accent: mat.define-palette($comduty-secondary-palette, 200, 100, 400);
-$ui-warn: mat.define-palette($comduty-primary-palette, 100);
+$ui-primary: mat.define-palette($commu-primary-palette);
+$ui-accent: mat.define-palette($commu-secondary-palette, 200, 100, 400);
+$ui-warn: mat.define-palette($commu-primary-palette, 100);
 
 $ui-typography: mat.define-typography-config(
   $font-family: '"Lato", sans-serif'

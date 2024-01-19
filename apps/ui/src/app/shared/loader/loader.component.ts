@@ -8,7 +8,7 @@ import { enterOpacity } from '../../core/animations/enterOpacity';
 import { LoaderService } from './loader.service';
 
 @Component({
-  selector: 'comduty-loader',
+  selector: 'commu-loader',
   standalone: true,
   imports: [CommonModule, MatProgressSpinnerModule],
   animations: [enterOpacity(1000)],

@@ -11,7 +11,7 @@ export class LoggerService extends ConsoleLogger {
    * @param {string} ctx Logging context
    */
   constructor(ctx?: string) {
-    super(ctx || 'Comduty');
+    super(ctx || 'Commu');
   }
 
   /**

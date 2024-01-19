@@ -16,7 +16,7 @@ import { SnackbarService } from '../../shared/snackbar/snackbar.service';
 import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'comduty-auth-sign-in',
+  selector: 'commu-auth-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.scss',
 })
